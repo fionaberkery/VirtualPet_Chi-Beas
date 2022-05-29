@@ -2,18 +2,34 @@ import '../App.css';
 import React, {useState, useEffect, useRef} from 'react';
 import Header from '../components/Header.js'
 import Timer from '../components/Timer';
-
+import egg from "/Users/andrewredman/CodeClan_work/group_project/chi-beas/client/src/images/Egg.png"
+const spriteWidth = 180
+const spriteHeight = 120
+let frameX = 0
+let frameY = 0
+let gameFrame = 0
+const staggerFrames = 15
 const TIME_LIMIT = 30000;
+
 
 const Canvas = props =>{
 
   const canvasRef = useRef (null)
 
+  const eggImage = new Image()
+  eggImage.src = egg
+
   const draw = (context, frameCount) => {
     context.clearRect (0,0,context.canvas.width, context.canvas.height)
-    context.fillStyle = "red"
-    context.beginPath()
-    context.arc(50, 100, 20*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
+    // context.fillReact = (100,30,100,100)
+    context.drawImage(eggImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+    if (gameFrame % staggerFrames == 0){
+      if (frameX < 4) frameX++ 
+      else frameX = 0
+    }
+    gameFrame++
+
+    
     context.fill()
   } 
 
