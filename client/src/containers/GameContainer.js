@@ -1,15 +1,17 @@
 import '../App.css';
 import React, {useState, useEffect, useRef} from 'react';
 import Header from '../components/Header.js'
+import Score from '../components/Score';
 import Timer from '../components/Timer';
-import egg from "/Users/andrewredman/CodeClan_work/group_project/chi-beas/client/src/images/Egg.png"
+import FinishPage from '../components/FinishPage';
+import egg from "../images/Egg.png"
 const spriteWidth = 180
 const spriteHeight = 120
 let frameX = 0
 let frameY = 0
 let gameFrame = 0
 const staggerFrames = 15
-const TIME_LIMIT = 30000;
+const TIME_LIMIT = 5000;
 
 
 const Canvas = props =>{
@@ -28,12 +30,8 @@ const Canvas = props =>{
       else frameX = 0
     }
     gameFrame++
-
-    
     context.fill()
   } 
-
-
 
   useEffect (() =>{
     const canvas = canvasRef.current
@@ -46,31 +44,29 @@ const Canvas = props =>{
       animationFrameId = window.requestAnimationFrame(render)
     }
     render()
-    
     return () => {
-      window.cancelAnimationFrame(animationFrameId)
-    }
-  }, [draw])
-  
+      window.cancelAnimationFrame(animationFrameId)}
+    },[draw])
   return <canvas ref={canvasRef} {...props}/>
 }
 
-
-
 const  Game = (()=> {
+  
   const [playing, setPlaying] = useState(false)
   const [finished, setFinished] = useState(false)
+  const [runningScore, setRunningScore] = useState(0)
+  const [finalScore, setFinalScore] = useState(0)
 
   const endGame = (()=>{
     setPlaying (false)
-    setFinished(true)
+    setFinished(true)   
+    setFinalScore(finalScore)
 })
 
 const startGame = (()=>{
     setPlaying (true)
     setFinished(false)
 })
-
 
   return (
     <>
@@ -79,17 +75,21 @@ const startGame = (()=>{
         <h1>Start Game</h1> 
         <button onClick={startGame}>Start the Game!</button>
       </>}
+    
     {playing && !finished &&
       <>
         <h1>Playing Game</h1> 
         <Timer time={TIME_LIMIT} onEnd={endGame}/>
+        <Score setFinalScore={setFinalScore} runningScore={runningScore} setRunningScore={setRunningScore} />
+        <br></br>
         <Canvas id="canvas"></Canvas>
       </>}
     
 
       {!playing && finished &&
       <>
-        <h1>Finished Game</h1> 
+        
+        <FinishPage finalScore={finalScore}/> 
       </>}
     </>
   )
