@@ -1,5 +1,5 @@
 import '../App.css';
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import Score from '../components/Score';
 import Timer from '../components/Timer';
 import FinishPage from '../components/FinishPage';
@@ -7,21 +7,18 @@ import Egg from '../components/Monster';
 import { Idle } from '../components/Monster';
 import { Grave } from '../components/Monster';
 
-const TIME_LIMIT = 15000;
+// const TIME_LIMIT = 15000;
+// const second = 1000
 
 const  Game = (()=> {
   
   const [playing, setPlaying] = useState(false)
   const [finished, setFinished] = useState(false)
-  
   const [finalScore, setFinalScore] = useState(0)
+  const [internalTime, setInternalTime] = useState(15000)
+  const [timeRate, setTimeRate] = useState (1000)
 
-  const second = 1000
-  const [internalTime, setInternalTime] = useState(TIME_LIMIT)
-  const [timeRate, setTimeRate] = useState (second)
-
-  const healthBarRef = useRef(TIME_LIMIT)  
-  const timeRef = useRef(TIME_LIMIT)
+  // const timeRef = useRef(TIME_LIMIT)
   
   const endGame = (()=>{
     setPlaying (false)
@@ -33,16 +30,12 @@ const startGame = (()=>{
     setFinished(false)
 })
 
-const handleClick = (event) => {
-  event.preventDefault()
-  let newTime = internalTime 
-  setInternalTime(newTime += 10000)
-  console.log(healthBarRef.current, "hb")
-  console.log(internalTime, "Internal")
+const handleClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime + 10000)
 }
 
-const changeInternalTime = (timeSum) => {
-  setInternalTime(timeSum)
+const changeInternalTime = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime - timeRate)
 }
 
 const tempFinalScore = (score) => {
@@ -64,19 +57,19 @@ const tempFinalScore = (score) => {
       <>
         <h1>Playing Game</h1> 
         <button onClick={endGame} > End Game </button>
-        <Timer 
-          time={TIME_LIMIT} 
+        <Timer  
           onEnd={endGame} 
           internalTime={internalTime} 
           timeRate={timeRate} 
           changeInternalTime={changeInternalTime} 
-          healthBarRef ={healthBarRef} 
-          timeRef={timeRef}
+          
           />
+        
         <Score 
           tempFinalScore={tempFinalScore}   
           onEnd={endGame} 
-          timeRef={timeRef} />
+          internalTime={internalTime}
+          />
         <br></br>
         <Idle id="canvas"></Idle>
         <button onClick={handleClick}>Feed</button>
