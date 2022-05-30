@@ -3,51 +3,11 @@ import React, {useState, useEffect, useRef} from 'react';
 import Score from '../components/Score';
 import Timer from '../components/Timer';
 import FinishPage from '../components/FinishPage';
-import egg from "../images/Egg.png"
+import Egg from '../components/Monster';
+import { Idle } from '../components/Monster';
+import { Grave } from '../components/Monster';
 
-const spriteWidth = 180
-const spriteHeight = 120
-let frameX = 0
-let frameY = 0
-let gameFrame = 0
-const staggerFrames = 15
-const TIME_LIMIT = 5000;
-
-const Canvas = props =>{
-
-  const canvasRef = useRef (null)
-
-  const eggImage = new Image()
-  eggImage.src = egg
-
-  const draw = (context, frameCount) => {
-    context.clearRect (0,0,context.canvas.width, context.canvas.height)
-    // context.fillReact = (100,30,100,100)
-    context.drawImage(eggImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFrames == 0){
-      if (frameX < 4) frameX++ 
-      else frameX = 0
-    }
-    gameFrame++
-    context.fill()
-  } 
-
-  useEffect (() =>{
-    const canvas = canvasRef.current
-    const context = canvas.getContext("2d")
-    let frameCount = 0
-    let animationFrameId
-    const render = () => {
-      frameCount++
-      draw(context, frameCount)
-      animationFrameId = window.requestAnimationFrame(render)
-    }
-    render()
-    return () => {
-      window.cancelAnimationFrame(animationFrameId)}
-    },[])
-  return <canvas ref={canvasRef} {...props}/>
-}
+const TIME_LIMIT = 15000;
 
 const  Game = (()=> {
   
@@ -97,6 +57,7 @@ const tempFinalScore = (score) => {
       <>
         <h1>Start Game</h1> 
         <button onClick={startGame}>Start the Game!</button>
+        <Egg id="canvas"></Egg>
       </>}
     
     {playing && !finished &&
@@ -117,9 +78,9 @@ const tempFinalScore = (score) => {
           onEnd={endGame} 
           timeRef={timeRef} />
         <br></br>
-        <h2> canvas here </h2>
-        <Canvas id="canvas"></Canvas>
+        <Idle id="canvas"></Idle>
         <button onClick={handleClick}>Feed</button>
+
       </>}
     
 
@@ -128,6 +89,7 @@ const tempFinalScore = (score) => {
       <>
       {console.log("fire")}
         <FinishPage finalScore={finalScore}/> 
+        <Grave id="canvas"></Grave>
       </>}
     </>
   )
