@@ -115,7 +115,7 @@ const tempFinalScore = (score) => {
         <Score 
           tempFinalScore={tempFinalScore}   
           onEnd={endGame} 
-          internalTime={internalTime} />
+          timeRef={timeRef} />
         <br></br>
         <h2> canvas here </h2>
         <Canvas id="canvas"></Canvas>
