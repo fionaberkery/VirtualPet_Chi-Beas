@@ -1,15 +1,18 @@
 import React, {useEffect, useState, useRef} from 'react'
 
-const Score = ({ tempFinalScore, internalTime, onEnd}) => {
+const Score = ({ tempFinalScore, timeRef, onEnd}) => {
 
     const [runningScore, setRunningScore] = useState(0)
+    const [count, setCount] = useState(1)
 
-    useEffect(() => {
-        setRunningScore((Math.floor(5000 / internalTime) * 5))
-        console.log(internalTime)
+    useEffect(() => {    
+        setCount(count + 1)
+        console.log(count, "count") 
+        setRunningScore(Math.floor(count / 2))
+        console.log(count, "count2")
         if (onEnd) {
         tempFinalScore(runningScore) 
-    }}, [internalTime, onEnd])
+    }}, [timeRef.current, onEnd])
     
     return (
     
