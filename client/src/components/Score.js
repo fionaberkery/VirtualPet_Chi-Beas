@@ -1,30 +1,22 @@
 import React, {useEffect, useState, useRef} from 'react'
 
-const Score = ({runningScore, setRunningScore, tempFinalScore}) => {
+const Score = ({ tempFinalScore, timeRef, onEnd}) => {
 
-    const second = 1000
-    const [scoreRate, setScoreRate] = useState(second)
+    const [runningScore, setRunningScore] = useState(0)
+    const [count, setCount] = useState(1)
 
-    const scoreRef = useRef(runningScore)
-
-    useEffect(() => {
-        scoreRef.current = setInterval(() => {
-            setRunningScore((scoreRef.current += scoreRate))
-        }, scoreRate)
-        return () => {
-            clearInterval(scoreRef.current)
-        }
-    }, [scoreRate])
-
-
-        let score = Math.floor((scoreRef.current / 1000) * 5)
-        tempFinalScore(score)
-    
-    
+    useEffect(() => {    
+        setCount(count + 1)
+        console.log(count, "count") 
+        setRunningScore(Math.floor(count / 2))
+        console.log(count, "count2")
+        if (onEnd) {
+        tempFinalScore(runningScore) 
+    }}, [timeRef.current, onEnd])
     
     return (
     
-            <div> Running score : {score} </div>
+            <div> Running score : {runningScore} </div>
     
             )
     }
