@@ -1,31 +1,23 @@
-import React, {useEffect, useRef, useState } from 'react'
+import React, {useEffect } from 'react'
 
-const Timer = ({ time, onEnd }) => {
-    
-    const second = 1000
-    const [internalTime, setInternalTime] = useState(time)
-    const [timeRate, setTimeRate] = useState (second)
-    const [sad, setSad] = useState(false)
-    
-    const healthBarRef = useRef(time)  
-    const timeRef = useRef(time)
+const Timer = ({onEnd, internalTime, timeRate, changeInternalTime, timeRef,  healthBarRef}) => {
 
     useEffect(() => {
-        if (internalTime === 0 && onEnd) {
+        if (internalTime <= 0) {
         onEnd()
         }
-    }, [internalTime, onEnd])
+    }, [internalTime])
 
     useEffect(() => {
-        healthBarRef.current = setInterval(
-        () => setInternalTime((timeRef.current -= timeRate)),
-        timeRate
+        healthBarRef.current = setInterval( () => 
+        changeInternalTime((timeRef.current -= timeRate)),
+            timeRate
         )
         return () => {
         clearInterval(healthBarRef.current)
         }
     }, [timeRate])
-    
+
     
     return <div>{`Time: ${internalTime / 1000}s`}</div>
     }
