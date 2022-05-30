@@ -1,6 +1,8 @@
 import React, {useEffect } from 'react'
 
-const Timer = ({onEnd, internalTime, timeRate, changeInternalTime, timeRef,  healthBarRef}) => {
+const Timer = ({onEnd, internalTime, timeRate, changeInternalTime}) => {
+    
+    let intervalID = 0  
 
     useEffect(() => {
         if (internalTime <= 0) {
@@ -9,12 +11,12 @@ const Timer = ({onEnd, internalTime, timeRate, changeInternalTime, timeRef,  hea
     }, [internalTime])
 
     useEffect(() => {
-        healthBarRef.current = setInterval( () => 
-        changeInternalTime((timeRef.current -= timeRate)),
+        intervalID = setInterval( () => 
+        changeInternalTime(),
             timeRate
-        )
+    )
         return () => {
-        clearInterval(healthBarRef.current)
+        clearInterval(intervalID)
         }
     }, [timeRate])
 
