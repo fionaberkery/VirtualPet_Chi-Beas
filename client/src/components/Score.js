@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
 
-const Score = ({runningScore, setRunningScore, finalScore, setFinalScore}) => {
+const Score = ({runningScore, setRunningScore, tempFinalScore}) => {
 
     const second = 1000
     const [scoreRate, setScoreRate] = useState(second)
@@ -16,8 +16,11 @@ const Score = ({runningScore, setRunningScore, finalScore, setFinalScore}) => {
         }
     }, [scoreRate])
 
-    let score = Math.floor((scoreRef.current / 1000) * 5)
-    setFinalScore(score)
+
+        let score = Math.floor((scoreRef.current / 1000) * 5)
+        tempFinalScore(score)
+    
+    
     
     return (
     

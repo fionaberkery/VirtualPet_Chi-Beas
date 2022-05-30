@@ -68,6 +68,12 @@ const startGame = (()=>{
     setFinished(false)
 })
 
+const tempFinalScore = ((score) => {
+  setFinalScore(score)
+})
+
+console.log(finalScore)
+
   return (
     <>
     {!playing && !finished &&
@@ -80,7 +86,7 @@ const startGame = (()=>{
       <>
         <h1>Playing Game</h1> 
         <Timer time={TIME_LIMIT} onEnd={endGame}/>
-        <Score setFinalScore={setFinalScore} runningScore={runningScore} setRunningScore={setRunningScore} />
+        <Score tempFinalScore={tempFinalScore} setFinalScore={setFinalScore} runningScore={runningScore} setRunningScore={setRunningScore} />
         <br></br>
         <Canvas id="canvas"></Canvas>
       </>}
