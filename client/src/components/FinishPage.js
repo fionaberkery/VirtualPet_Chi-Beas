@@ -14,7 +14,7 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
         <>
 
             
-            <h1> {name} is dead </h1>
+            <h1 className="input-name"> {name} is dead </h1>
             <h3>Final Score : {finalScore} </h3>
             
             <button onClick={handleSaveButton} > Save score </button>
