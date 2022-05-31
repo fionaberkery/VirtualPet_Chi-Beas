@@ -10,7 +10,7 @@ const createRouter = require('./helpers/create_router')
 
 MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     .then((client) => {
-    const db = client.db('chi-beas')
+    const db = client.db('chi_beas')
     const monstersCollection = db.collection('monsters')
     const monstersRouter = createRouter(monstersCollection)
     app.use('/api/monsters', monstersRouter)
