@@ -6,7 +6,11 @@ import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
 import startButton from '../images/start_button.png'
 import { Idle } from '../components/Monster';
+import { Sick } from '../components/Monster';
 import { Grave } from '../components/Monster';
+import { Play } from '../components/Monster';
+import { Eating } from '../components/Monster';
+import { Poop } from '../components/Monster';
 
 const gameTime = 15000;
 const oneSecond = 1000
