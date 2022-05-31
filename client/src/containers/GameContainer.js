@@ -11,6 +11,7 @@ import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
+import HealthBar from '../components/Healthbar';
 
 const gameTime = 15000;
 const oneSecond = 1000
@@ -84,6 +85,7 @@ const handleNameInput = (event) => {
           timeRate={timeRate} 
           changeInternalTime={changeInternalTime} 
           />
+          <HealthBar internalTime={internalTime}/>
         <Score 
           tempFinalScore={tempFinalScore}   
           onEnd={endGame} 
