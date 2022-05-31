@@ -22,11 +22,7 @@ button {
     cursor: pointer;
 }
 
-#start-button-image {
-    border-style: hidden;
-}
-
-#start-button {
+.game-button {
     border-style: hidden;
     background-color: white;
 }
