@@ -16,9 +16,10 @@ import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
+import { Snoozin } from '../components/Monster';
 import HealthBar from '../components/Healthbar';
 
-const gameTime = 15000;
+const gameTime = 150000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -36,6 +37,7 @@ const  Game = ()=> {
   const [idle, setIdle] = useState(true)
   const [play, setPlay] = useState(false)
   const [sick, setSick] = useState(false)
+  const [snoozin, setSnoozin] = useState(false)
 
   useEffect(() => {
     if (internalTime <= 0) {
@@ -57,6 +59,7 @@ const  Game = ()=> {
     setPoop(false)
     setPlay(false)
     setSick(false)
+    setSnoozin(false)
   } 
 
 const startGame = (()=>{
@@ -89,6 +92,7 @@ const handleFeedClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setSnoozin(false)
   setFeed(true)
 }
 const handleIdleClick = () => {
@@ -96,6 +100,7 @@ const handleIdleClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setSnoozin(false)
   setIdle(true)  
 }
 
@@ -105,6 +110,7 @@ const handlePlayClick = () => {
   setFeed(false)
   setPoop(false)
   setSick(false)
+  setSnoozin(false)
   setPlay(true)
 }
 
@@ -114,6 +120,7 @@ const handlePoopClick = () => {
   setFeed(false)
   setPlay(false)
   setSick(false)
+  setSnoozin(false)
   setPoop(true)
 }
 
@@ -123,10 +130,21 @@ const handleSickClick = () => {
   setFeed(false)
   setPoop(false)
   setPlay(false)
+  setSnoozin(false)
   setSick(true)
 }
 
-const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick]
+const handleSnoozeClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime - 10000)
+  setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
+  setSnoozin(true)
+}
+
+const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleSnoozeClick]
 
 const handleRandomEvent = () => {
   const randomIndex = (n) => {
@@ -199,6 +217,14 @@ const handleNameInput = (event) => {
       <>
         <h1 id="header">Playing w ma balls</h1>
         <Play id="canvas"></Play>
+        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
+        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
+      </>}
+
+      {playing && snoozin &&
+      <>
+        <h1 id="header">Brb... havin a snooze </h1>
+        <Snoozin id="canvas"></Snoozin>
         <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
         <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
       </>}
