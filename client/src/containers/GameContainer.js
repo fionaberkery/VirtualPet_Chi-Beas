@@ -45,8 +45,7 @@ const  Game = ()=> {
         setMonsters(allMonsters)
       })
     }
-  }, [])
-  
+  }, [])  
   
 const startGame = (()=>{
     setPlaying (true)
@@ -87,19 +86,38 @@ const handleIdleClick = () => {
 const handlePlayClick = () => {
   setInternalTime((currentInternalTime) => currentInternalTime + 20000)
   setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setSick(false)
   setPlay(true)
 }
 
 const handlePoopClick = () => {
   setInternalTime((currentInternalTime) => currentInternalTime - 20000)
   setIdle(false)
+  setFeed(false)
+  setPlay(false)
+  setSick(false)
   setPoop(true)
 }
 
 const handleSickClick = () => {
   setInternalTime((currentInternalTime) => currentInternalTime - 10000)
   setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
   setSick(true)
+}
+
+const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick]
+
+const handleRandomEvent = () => {
+  const randomIndex = (n) => {
+    return Math.floor( Math.random() * n ); 
+  }
+  const index = randomIndex(handlersArray.length)
+  handlersArray[index]();
 }
 
 const changeInternalTime = () => {
@@ -146,12 +164,8 @@ const handleNameInput = (event) => {
           />
         <br></br>
         <Idle id="canvas"></Idle>
-        <button onClick={handleIdleClick}>Idle</button>
-        <button onClick={handleFeedClick}>Feed</button>
-        <button onClick={handlePlayClick}>Play</button>
-        <button onClick={handlePoopClick}>💩</button>
-        <button onClick={handleSickClick}>🥴</button>
-        
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me</button>        
       </>}
     
       {playing && feed &&
@@ -172,8 +186,8 @@ const handleNameInput = (event) => {
           />
         <br></br>
         <Eating id="canvas"></Eating>
-        <button onClick={handleIdleClick}>Idle</button>
-        <button onClick={handleFeedClick}>Feed</button>
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me</button> 
         
       </>}
 
@@ -195,7 +209,8 @@ const handleNameInput = (event) => {
           />
         <br></br>
         <Poop id="canvas"></Poop>
-        <button onClick={handleIdleClick}>Idle</button>        
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me </button>        
       </>}
 
       {playing && sick &&
@@ -216,7 +231,8 @@ const handleNameInput = (event) => {
           />
         <br></br>
         <Sick id="canvas"></Sick>
-        <button onClick={handleIdleClick}>Idle</button>        
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me</button>         
       </>}
 
       {playing && play &&
@@ -237,7 +253,8 @@ const handleNameInput = (event) => {
           />
         <br></br>
         <Play id="canvas"></Play>
-        <button onClick={handleIdleClick}>Idle</button>        
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me</button>         
       </>}
 
       {!playing && finished &&
