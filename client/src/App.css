@@ -8,17 +8,20 @@
 }
 
 #eye,  #eye_2{
-    animation: fadeInUp 1s;
+    animation: fadeInUp 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateX(5%);
+    from {        
+        transform: translateX(3%);
+    }
+    50% {
+        transform: translateX(0%);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateX(-3%);
     }
 }
 
