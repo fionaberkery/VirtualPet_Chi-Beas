@@ -4,6 +4,7 @@ import Score from '../components/Score';
 import Timer from '../components/Timer';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
+import startButton from '../images/start_button.png'
 import { Idle } from '../components/Monster';
 import { Grave } from '../components/Monster';
 
@@ -57,20 +58,21 @@ const handleNameInput = (event) => {
 
   return (
     <>
+    <div id="all-game">
     {!playing && !finished &&
       <>
-        <h1>Start Game</h1> 
+        <h1 id="header">Start Game</h1> 
 
-        <label htmlFor='name-input'> Enter Your CB name here </label>
+        <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name}></input>
-
-        <button onClick={startGame}>Start the Game!</button>
+        <br></br>
+        <button id="start-button" onClick={startGame}> <img id="start-button-image" src={startButton} width="100"/> </button>
         <Egg id="canvas"></Egg>
       </>}
     
     {playing && !finished &&
       <>
-        <h1>Playing Game</h1> 
+        <h1 id="header">Playing Game</h1> 
         <p> {name} </p>
         <button onClick={endGame} > End Game </button>
         <p> {`Time: ${internalTime / 1000}s`} </p>
@@ -97,7 +99,9 @@ const handleNameInput = (event) => {
         <FinishPage finalScore={finalScore} name={name} /> 
         <Grave id="canvas"></Grave>
       </>}
+      </div>
     </>
+    
   )
 })
 
