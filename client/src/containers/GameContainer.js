@@ -13,6 +13,7 @@ import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
+import { Crush } from '../components/Monster';
 import HealthBar from '../components/Healthbar';
 
 const gameTime = 15000;
@@ -33,6 +34,7 @@ const  Game = ()=> {
   const [idle, setIdle] = useState(true)
   const [play, setPlay] = useState(false)
   const [sick, setSick] = useState(false)
+  const [crush, setCrush] = useState(false)
 
   useEffect(() => {
     if (internalTime <= 0) {
@@ -54,6 +56,7 @@ const  Game = ()=> {
     setPoop(false)
     setPlay(false)
     setSick(false)
+    setCrush(false)
   } 
 
 const startGame = (()=>{
@@ -86,6 +89,7 @@ const handleFeedClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setFeed(true)
 }
 const handleIdleClick = () => {
@@ -93,6 +97,7 @@ const handleIdleClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setIdle(true)  
 }
 
@@ -102,6 +107,7 @@ const handlePlayClick = () => {
   setFeed(false)
   setPoop(false)
   setSick(false)
+  setCrush(false)
   setPlay(true)
 }
 
@@ -111,6 +117,7 @@ const handlePoopClick = () => {
   setFeed(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setPoop(true)
 }
 
@@ -120,10 +127,20 @@ const handleSickClick = () => {
   setFeed(false)
   setPoop(false)
   setPlay(false)
+  setCrush(false)
   setSick(true)
 }
+const handleCrushClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime - 3000)
+  setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
+  setCrush(true)
+}
 
-const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick]
+const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleCrushClick]
 
 const handleRandomEvent = () => {
   const randomIndex = (n) => {
@@ -195,6 +212,14 @@ const handleNameInput = (event) => {
       {playing && play &&
       <>
         <h1 id="header">Playing w ma balls</h1>
+        <Play id="canvas"></Play>
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me</button>         
+      </>}
+
+      {playing && crush &&
+      <>
+        <h1 id="header">Death from Above</h1>
         <Play id="canvas"></Play>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
