@@ -3,15 +3,15 @@ db.dropDatabase();
 
 db.monsters.insertMany([
     {
-        cbName:"Shark",
-        score: 45
+        name:"Shark",
+        finalScore: 45
     },
     {
-        cbName:"Eddie",
-        score: 32
+        name:"Eddie",
+        finalScore: 32
     },
     {
-        cbName:"Fifi",
-        score: 24
+        name:"Fifi",
+        finalScore: 24
     }
 ]);
