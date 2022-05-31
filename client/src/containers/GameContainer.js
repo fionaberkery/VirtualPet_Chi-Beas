@@ -1,8 +1,7 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
-import Score from '../components/Score';
-import Timer from '../components/Timer';
+
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
@@ -13,7 +12,7 @@ import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
-import HealthBar from '../components/Healthbar';
+import Background from '../components/Background';
 
 const gameTime = 15000;
 const oneSecond = 1000
@@ -149,6 +148,7 @@ const handleNameInput = (event) => {
     <>
     <div id="all-game">
     <Header endGame={endGame} internalTime={internalTime} timeRate={timeRate} changeInternalTime={changeInternalTime} tempFinalScore={tempFinalScore} playing={playing} name={name}/>
+    <Background/>
 
     {!playing && !finished &&
       <>

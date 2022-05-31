@@ -23,7 +23,7 @@ const Header = ({endGame, internalTime, timeRate, changeInternalTime, tempFinalS
             internalTime={internalTime}
           />
         </>
-            : <p></p>
+            : ''
         }
 
     </>

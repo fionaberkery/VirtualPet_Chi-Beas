@@ -1,13 +1,32 @@
 :root {
-    --bar-fill: #57e705;
-    --bar-top: #6aff03;
     --pixel-size: 7;
 }
 
+#background-image {
+    position: absolute;
+    z-index: -1;
+}
+
+#eye,  #eye_2{
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .input-name {
- text-transform: uppercase;
- font-family: 'Press Start 2P', cursive;
- width: 100px;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    width: 100px;
+    margin-block-start: 0px;
 }
 
 #all-game {
@@ -16,6 +35,7 @@
 
 #header {
     font-family: 'Press Start 2P', cursive;
+    margin-block-start: 0px;
 }
 
 button {
@@ -32,11 +52,11 @@ button {
 }
 
 .healthbar {
-        width: auto;
-        height: 30px;
-        display: block;
-        width: calc(38px * var(--pixel-size));
-        margin: 2vw;
+    width: auto;
+    height: 30px;
+    display: block;
+    width: calc(38px * var(--pixel-size));
+    margin: 2vw;
 }
 
 .healthbar-inner {
