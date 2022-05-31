@@ -20,24 +20,4 @@ button {
 }
 
 
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#game-over-image {
-    animation: blink 1.3s;
-    animation-iteration-count: infinite;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-}
 
