@@ -19,10 +19,8 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
             
             <button onClick={handleSaveButton} > Save score </button>
 
-            <HighScoresList deleteMonster={deleteMonster} monsters={monsters} ></HighScoresList>
+            <HighScoresList deleteMonster={deleteMonster} monsters={monsters} />
 
-            <h1 id="header"> {name} is dead </h1>
-            <h3 id="header">Final Score : {finalScore} </h3>
 
         </>
     )
