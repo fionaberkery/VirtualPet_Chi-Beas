@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
 import Score from '../components/Score';
 import Timer from '../components/Timer';
+import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
 import startButton from '../images/start_button.png'
@@ -47,7 +48,16 @@ const  Game = ()=> {
     }
   }, [])  
   
+  const idleState = () => {
+    setIdle(true)
+    setFeed(false)
+    setPoop(false)
+    setPlay(false)
+    setSick(false)
+  } 
+
 const startGame = (()=>{
+    idleState()
     setPlaying (true)
     setFinished(false)
     setInternalTime(gameTime)
@@ -73,6 +83,9 @@ const deleteMonster = (id) => {
 const handleFeedClick = () => {
   setInternalTime((currentInternalTime) => currentInternalTime + 10000)
   setIdle(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
   setFeed(true)
 }
 const handleIdleClick = () => {
@@ -84,7 +97,7 @@ const handleIdleClick = () => {
 }
 
 const handlePlayClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime + 20000)
+  setInternalTime((currentInternalTime) => currentInternalTime + 8000)
   setIdle(false)
   setFeed(false)
   setPoop(false)
@@ -93,7 +106,7 @@ const handlePlayClick = () => {
 }
 
 const handlePoopClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime - 20000)
+  setInternalTime((currentInternalTime) => currentInternalTime - 5000)
   setIdle(false)
   setFeed(false)
   setPlay(false)
@@ -135,10 +148,11 @@ const handleNameInput = (event) => {
   return (
     <>
     <div id="all-game">
+    <Header endGame={endGame} internalTime={internalTime} timeRate={timeRate} changeInternalTime={changeInternalTime} tempFinalScore={tempFinalScore} playing={playing} name={name}/>
+
     {!playing && !finished &&
       <>
         <h1 id="header">Start Game</h1> 
-
         <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
         <br></br>
@@ -148,21 +162,7 @@ const handleNameInput = (event) => {
     
     {playing && idle &&
       <>
-        <h1 id="header">Playing Game</h1> 
-        <p className="input-name"> {name} </p>
-        <button onClick={endGame} > End Game </button>
-        <p> {`Time: ${internalTime / 1000}s`} </p>
-        <Timer  
-          timeRate={timeRate} 
-          changeInternalTime={changeInternalTime} 
-          />
-          <HealthBar internalTime={internalTime}/>
-        <Score 
-          tempFinalScore={tempFinalScore}   
-          onEnd={endGame} 
-          internalTime={internalTime}
-          />
-        <br></br>
+        <h1 id="header">Home Sweet Home</h1> 
         <Idle id="canvas"></Idle>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>        
@@ -170,44 +170,15 @@ const handleNameInput = (event) => {
     
       {playing && feed &&
       <>
-        <h1 id="header">Playing Game</h1> 
-        <p className="input-name"> {name} </p>
-        <button onClick={endGame} > End Game </button>
-        <p> {`Time: ${internalTime / 1000}s`} </p>
-        <Timer  
-          timeRate={timeRate} 
-          changeInternalTime={changeInternalTime} 
-          />
-          <HealthBar internalTime={internalTime}/>
-        <Score 
-          tempFinalScore={tempFinalScore}   
-          onEnd={endGame} 
-          internalTime={internalTime}
-          />
-        <br></br>
+        <h1 id="header">Yum Yum!</h1> 
         <Eating id="canvas"></Eating>
         <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me</button> 
-        
+        <button onClick={handleRandomEvent}>Surprise Me</button>         
       </>}
 
       {playing && poop &&
       <>
-        <h1 id="header">Playing Game</h1> 
-        <p className="input-name"> {name} </p>
-        <button onClick={endGame} > End Game </button>
-        <p> {`Time: ${internalTime / 1000}s`} </p>
-        <Timer  
-          timeRate={timeRate} 
-          changeInternalTime={changeInternalTime} 
-          />
-          <HealthBar internalTime={internalTime}/>
-        <Score 
-          tempFinalScore={tempFinalScore}   
-          onEnd={endGame} 
-          internalTime={internalTime}
-          />
-        <br></br>
+        <h1 id="header">Opsie poopsie</h1>
         <Poop id="canvas"></Poop>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me </button>        
@@ -215,21 +186,7 @@ const handleNameInput = (event) => {
 
       {playing && sick &&
       <>
-        <h1 id="header">Playing Game</h1> 
-        <p className="input-name"> {name} </p>
-        <button onClick={endGame} > End Game </button>
-        <p> {`Time: ${internalTime / 1000}s`} </p>
-        <Timer  
-          timeRate={timeRate} 
-          changeInternalTime={changeInternalTime} 
-          />
-          <HealthBar internalTime={internalTime}/>
-        <Score 
-          tempFinalScore={tempFinalScore}   
-          onEnd={endGame} 
-          internalTime={internalTime}
-          />
-        <br></br>
+        <h1 id="header">I'm feeling peely wally</h1> 
         <Sick id="canvas"></Sick>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
@@ -237,21 +194,7 @@ const handleNameInput = (event) => {
 
       {playing && play &&
       <>
-        <h1 id="header">Playing Game</h1> 
-        <p className="input-name"> {name} </p>
-        <button onClick={endGame} > End Game </button>
-        <p> {`Time: ${internalTime / 1000}s`} </p>
-        <Timer  
-          timeRate={timeRate} 
-          changeInternalTime={changeInternalTime} 
-          />
-          <HealthBar internalTime={internalTime}/>
-        <Score 
-          tempFinalScore={tempFinalScore}   
-          onEnd={endGame} 
-          internalTime={internalTime}
-          />
-        <br></br>
+        <h1 id="header">Playing w ma balls</h1>
         <Play id="canvas"></Play>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
@@ -260,7 +203,6 @@ const handleNameInput = (event) => {
       {!playing && finished &&
         
       <>
-      
         <FinishPage monsters={monsters} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
         <Grave id="canvas"></Grave>
         <button id="start-button" onClick={startGame}> Play Again </button>
