@@ -3,8 +3,8 @@ import ScoreItem from './ScoreItem.js'
 
 const HighScoresList = ({monsters, deleteMonster}) => {
 
-    const theScoresList = monsters.map((monster) => {
-        return <ScoreItem monster={monster} key={monster._id} deleteMonster={deleteMonster} />
+    const theScoresList = monsters.map((monster, index) => {
+        return <ScoreItem key={index} monster={monster} deleteMonster={deleteMonster} />
     })
 
     return (
@@ -12,7 +12,6 @@ const HighScoresList = ({monsters, deleteMonster}) => {
                 <h2>High Scores</h2>
                 {theScoresList}
             </>
-
     )
 }
 

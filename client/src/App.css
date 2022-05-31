@@ -4,6 +4,12 @@
     --pixel-size: 7;
 }
 
+.input-name {
+ text-transform: uppercase;
+ font-family: 'Press Start 2P', cursive;
+ width: 100px;
+}
+
 #all-game {
     font-family: 'Press Start 2P', cursive;
 }

@@ -66,7 +66,7 @@ export const Eating = props =>{
       // context.fillReact = (100,30,100,100)
     context.drawImage(eatingImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
     if (gameFrame % staggerFramesEating == 0){
-        if (frameX < 8) frameX++ 
+        if (frameX < 9) frameX++ 
         else frameX = 0
     }
     gameFrame++
