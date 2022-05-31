@@ -1,3 +1,52 @@
- #canvas{
-     
- }
+:root {
+    --bar-fill: #57e705;
+    --bar-top: #6aff03;
+    --pixel-size: 7;
+}
+
+#all-game {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#header {
+    font-family: 'Press Start 2P', cursive;
+}
+
+button {
+    cursor: pointer;
+}
+
+#start-button-image {
+    border-style: hidden;
+}
+
+#start-button {
+    border-style: hidden;
+    background-color: white;
+}
+
+.healthbar {
+        width: auto;
+        height: 30px;
+        display: block;
+        width: calc(38px * var(--pixel-size));
+        margin: 2vw;
+}
+
+.healthbar-inner {
+    background: linear-gradient(to left, #10ec08, #f00303);
+    box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+}
+
+
+
