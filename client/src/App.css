@@ -75,7 +75,7 @@ button {
 
 .game-button {
     border-style: hidden;
-    background-color: white;
+    background-color: transparent;
 }
 
 .healthbar {

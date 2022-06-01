@@ -3,6 +3,7 @@ import HighScoresList from "./HighScoresList";
 import { postMonster } from '../services/GameServices'
 import saveButton from '../images/save.png'
 import gameOver from '../images/gameover.png'
+import '../FinishPage.css';
 
 const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => {
 
@@ -15,7 +16,8 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
 
     return (
 
-        <>            
+        <> 
+        <div id="f-p">           
             <img src={gameOver} width="500" height="50"/>
             <h1 id="finish-page-text"> {name} is dead </h1>
             <h3>Final Score : {finalScore} </h3>            
@@ -40,6 +42,7 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
                         <a href='https://github.com/aaronhubber'> view gitHub</a>
                     </li>
                 </ul>
+                </div>
         </>
     )
 }
