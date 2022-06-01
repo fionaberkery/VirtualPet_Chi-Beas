@@ -281,6 +281,7 @@ export const Crush = props =>{
     const canvasRef = useRef (null)
     const crushImage = new Image ()
     crushImage.src = crush
+    const draw = (context) => {
   context.drawImage(crushImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
     if (gameFrame % staggerFramesEating == 0){
         if (frameX < 9) frameX++ 
@@ -305,7 +306,7 @@ export const Crush = props =>{
         window.cancelAnimationFrame(animationFrameId)}
     },[draw])
     return <canvas ref={canvasRef} {...props}/>
-      
+} 
 
 export const Snoozin = props =>{
     const canvasRef = useRef (null)
