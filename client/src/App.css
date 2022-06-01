@@ -30,15 +30,18 @@
 .input-name {
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
-    width: 100px;
+    width: 6vw;
+    font-size: 1.5vw;
     margin-block-start: 0px;
-    height:30px;
+    height:3vw;
     box-sizing: border-box;
     border: 3px solid rgb(112, 112, 112);
     background-color: #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    margin-left: 2vw;
+    margin-top: 1vw;
 }
 
 .input-name:focus {
@@ -50,8 +53,6 @@
     font-family: 'Press Start 2P', cursive;
 }
 
-
-
 #all-game {
     font-family: 'Press Start 2P', cursive;
 }
@@ -61,15 +62,38 @@
 }
 
 .header {
+    position: fixed;
+    top: 40%;
     font-family: 'Press Start 2P', cursive;
     margin-block-start: 0px;
+    margin-left: 2vw;
 }
 
 button {
     cursor: pointer;
 }
 
+#start-button {
+    cursor: pointer;
+    margin-left: 2vw;
+    margin-top: 0.8vw;
+}
+
 .game-button {
+    border-style: hidden;
+    background-color: transparent;
+}
+
+#surprise-btn {
+    margin-left: 2vw;
+    margin-top: 24%;
+    border-style: hidden;
+    background-color: transparent;
+}
+
+#home-btn {
+    margin-left: 2vw;
+    margin-top: 23%;
     border-style: hidden;
     background-color: transparent;
 }
@@ -98,34 +122,33 @@ button {
 }
 
 #egg{
+    width: 53%;
+    position: relative;
+    left: 30%;
+    margin-top: -3%;
+}
+
+#fire, #sleep, #idle {
     display: flex;
     flex-direction: column;
     width: 53%;
-    margin-top: 18%;
+    margin-top: 1%;
     margin-left: 35%;
 }
 
-#idle, #sick {
+#feed, #poop, #crush, #dance, #play {
     display: flex;
     flex-direction: column;
     width: 53%;
-    margin-top: 23%;
+    margin-top: 2%;
     margin-left: 35%;
 }
 
-#crush, #dance, #fire, #play, #poop, #feed {
+#sick {
     display: flex;
     flex-direction: column;
     width: 53%;
-    margin-top: 21%;
-    margin-left: 35%;
-}
-
-#sleep {
-    display: flex;
-    flex-direction: column;
-    width: 53%;
-    margin-top: 20%;
+    margin-top: 4%;
     margin-left: 35%;
 }
 
@@ -134,30 +157,19 @@ button {
 }
 
 .title{
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.8);
     font-size:10vw;
     text-align: center;
-    border: solid;
-    border-color: black;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+    border-bottom: dashed;
+    border-width: 10px;
+    margin-top: 15px;
+    padding-top: 10px;
 }
 
-.title-tagline{
+.title-tagline, .name-box{
     background-color: transparent;
-    font-size:1vw;
-    margin-block-start: 14.0em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-#egg{
-    display: flex;
-    flex-direction: column;
-    width: 53%;
-    margin-top: 2%;
-    margin-left: 35%;
+    font-size:1.2vw;
+    margin-left: 2vw;
 }
 
 .name-input{
@@ -165,5 +177,10 @@ button {
     width: fit-content;
 }
 
+.style-element{
+    background-color: rgb(255, 255, 255, 0.8);
+    margin-left: 4.5vh;
+    margin-top: 5vh;
+}
 
 
