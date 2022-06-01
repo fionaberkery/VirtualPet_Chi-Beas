@@ -75,7 +75,7 @@ button {
 
 .game-button {
     border-style: hidden;
-    background-color: white;
+    background-color: transparent;
 }
 
 .healthbar {
@@ -133,7 +133,37 @@ button {
     background-color: #10ec08;
 }
 
+.title{
+    background-color: white;
+    font-size:10vw;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
 
+.title-tagline{
+    background-color: transparent;
+    font-size:1vw;
+    margin-block-start: 14.0em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#egg{
+    display: flex;
+    flex-direction: column;
+    width: 53%;
+    margin-top: 2%;
+    margin-left: 35%;
+}
+
+.name-input{
+    text-align: center;
+    width: fit-content;
+}
 
 
 

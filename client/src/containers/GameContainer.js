@@ -229,15 +229,18 @@ const handleNameInput = (event) => {
     
     {!playing && !finished &&
       <>
-      <h2>Chi-Beas - Welcome to a world of death, dancing and destruction</h2>
-        <h1 className="header">Start Game</h1> 
-        <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
-        <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
+      <h1 className='title'>Chi-Beas </h1>
+      <h2 className='title-tagline'>Welcome to a world of death, dancing and destruction...</h2>
+        
+        
         <br></br>
-        <div className="egg">
-        <button id="start-button" onClick={startGame} className='game-button' > <img src={startButton} width="130" alt="Button to start the game"/> </button>
-        <Egg className="canvas"></Egg>
-        </div>
+        <label  className='name-box' htmlFor='name-input'> Enter Your CB name here </label><br></br>
+        <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
+        <div id="egg">
+            <button id="start-button" onClick={startGame} className='game-button' > <img src={startButton} width="130" alt="Button to start the game"/> </button>
+            <Egg />
+          </div>
+        
       </>}
     
     {playing && idle &&
