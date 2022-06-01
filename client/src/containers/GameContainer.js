@@ -14,7 +14,7 @@ import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
 import Background from '../components/Background';
 
-const gameTime = 15000;
+const gameTime = 15000000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -152,7 +152,7 @@ const handleNameInput = (event) => {
 
     {!playing && !finished &&
       <>
-        <h1 id="header">Start Game</h1> 
+        <h1 className="header">Start Game</h1> 
         <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
         <br></br>
@@ -162,7 +162,7 @@ const handleNameInput = (event) => {
     
     {playing && idle &&
       <>
-        <h1 id="header">Home Sweet Home</h1> 
+        <h1 className="header">Home Sweet Home</h1> 
         <Idle id="canvas"></Idle>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>        
@@ -170,7 +170,7 @@ const handleNameInput = (event) => {
     
       {playing && feed &&
       <>
-        <h1 id="header">Yum Yum!</h1> 
+        <h1 className="header">Yum Yum!</h1> 
         <Eating id="canvas"></Eating>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
@@ -178,7 +178,7 @@ const handleNameInput = (event) => {
 
       {playing && poop &&
       <>
-        <h1 id="header">Opsie poopsie</h1>
+        <h1 className="header">Opsie poopsie</h1>
         <Poop id="canvas"></Poop>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me </button>        
@@ -186,7 +186,7 @@ const handleNameInput = (event) => {
 
       {playing && sick &&
       <>
-        <h1 id="header">I'm feeling peely wally</h1> 
+        <h1 className="header">I'm feeling peely wally</h1> 
         <Sick id="canvas"></Sick>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
@@ -194,7 +194,7 @@ const handleNameInput = (event) => {
 
       {playing && play &&
       <>
-        <h1 id="header">Playing w ma balls</h1>
+        <h1 iclassName="header">Playing w ma balls</h1>
         <Play id="canvas"></Play>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
@@ -212,7 +212,5 @@ const handleNameInput = (event) => {
 
   )}
       
-      
-
 
 export default Game;

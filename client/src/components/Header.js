@@ -8,21 +8,21 @@ const Header = ({endGame, internalTime, timeRate, changeInternalTime, tempFinalS
     <>
         {
             playing ? 
-            <>
-            <p className="input-name"> {name} </p>
-            <button onClick={endGame} > End Game </button>
-            <p> {`Time: ${internalTime / 1000}s`} </p>
-            <Timer  
-            timeRate={timeRate} 
-            changeInternalTime={changeInternalTime} 
-            />
-            <HealthBar internalTime={internalTime}/>
-            <Score 
-            tempFinalScore={tempFinalScore}   
-            onEnd={endGame} 
-            internalTime={internalTime}
-            />
-        </>
+            <div className="head-container">
+                <p className="input-name"> {name} </p>
+                <button onClick={endGame} > End Game </button>
+                <p> {`Time: ${internalTime / 1000}s`} </p>
+                <Timer  
+                    timeRate={timeRate} 
+                    changeInternalTime={changeInternalTime} 
+                />
+                <HealthBar internalTime={internalTime}/>
+                <Score 
+                    tempFinalScore={tempFinalScore}   
+                    onEnd={endGame} 
+                    internalTime={internalTime}
+                />
+            </div>
             : ''
         }
 

@@ -38,7 +38,11 @@
     font-family: 'Press Start 2P', cursive;
 }
 
-#header {
+.head-container {
+    position: absolute;
+}
+
+.header {
     font-family: 'Press Start 2P', cursive;
     margin-block-start: 0px;
 }
