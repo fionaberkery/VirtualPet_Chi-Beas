@@ -231,24 +231,22 @@ const handleNameInput = (event) => {
       <>
       <h1 className='title'>Chi-Beas </h1>
       <h2 className='title-tagline'>Welcome to a world of death, dancing and destruction...</h2>
-        
-        
-        <br></br>
+
         <label  className='name-box' htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
         <div id="egg">
             <button id="start-button" onClick={startGame} className='game-button' > <img src={startButton} width="130" alt="Button to start the game"/> </button>
             <Egg />
           </div>
-        
+
       </>}
     
     {playing && idle &&
       <>
       <h1 className="header">Home Sweet Home</h1> 
-        <div className='animation'>
+        <div id="idle">
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
-          <Idle className="canvas"></Idle>
+          <Idle />
         </div>
       
       </>}
@@ -256,21 +254,20 @@ const handleNameInput = (event) => {
       {playing && feed &&
       <>
         <h1 className="header">Yum Yum!</h1> 
-        <div className='animation'>
+        <div id="feed">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
-          <Eating className="canvas"></Eating>       
+          <Eating />    
         </div>
       </>}
 
       {playing && poop &&
       <>
-
         <h1 className="header">Oopsie poopsie</h1>
-        <div className='animation'>
+        <div id="poop">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
-          <Poop className="canvas"></Poop>    
+          <Poop /> 
         </div>
       </>}
 
@@ -278,72 +275,70 @@ const handleNameInput = (event) => {
       <>
 
         <h1 className="header">I'm feeling peely-wally</h1> 
-        <div className='animation'>
+        <div id="sick">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
-          <Sick className="canvas"></Sick>      
+          <Sick />   
         </div>
       </>}
 
       {playing && play &&
       <>
         <h1 className="header">Playing wi ma ball</h1>
-        <div className='animation'>
+        <div id="play">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
-          <Play className="canvas"></Play>    
+          <Play />    
         </div>
       </>}
 
       {playing && snoozin &&
       <>
         <h1 className="header">Brb... havin a snooze </h1>
-        <div className='animation'>
+        <div id="sleep">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>     
-          <Snoozin className="canvas"></Snoozin>   
+          <Snoozin />   
         </div>
       </>}
 
       {playing && crush &&
       <>
         <h1 className="header">Death from Above</h1>
-        <div className='animation'>
+        <div id="crush">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
-          <Crush className="canvas"></Crush>   
+          <Crush />   
         </div>          
       </>}
 
       {playing && dance &&
       <>
         <h1 className="header">Stayin' Aliveee 🎶</h1>
-        <div className='animation'>
+        <div id="dance">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
-          <Dance className="canvas"></Dance>        
+          <Dance />        
         </div>
       </>}
 
       {playing && fire &&
       <>
         <h1 className="header">I'm on Fire</h1>
-        <div className='animation'>
+        <div id="fire">
           <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
           <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
-          <Fire className="canvas"></Fire>
-       </div>
+          <Fire />
+        </div>
 
       </>}
       </div>
 
-      {!playing && finished &&
-        
+      {!playing && finished &&        
       <>
         <FinishPage monsters={monsters} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
         <Grave className="canvas"></Grave>
         <button className="game-button" onClick={startGame}> <img src={playAgainButton} width="160" height="40" /></button>
-
       </>}
       
     </>
