@@ -177,5 +177,10 @@ button {
     width: fit-content;
 }
 
+.style-element{
+    background-color: rgb(255, 255, 255, 0.8);
+    margin-left: 4.5vh;
+    margin-top: 5vh;
+}
 
 
