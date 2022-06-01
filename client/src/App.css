@@ -129,6 +129,13 @@ button {
     background-color: transparent;
 }
 
+#end-game-btn {
+    margin-left: 2vw;
+    margin-top: 23%;
+    border-style: hidden;
+    background-color: transparent;
+}
+
 #egg{
     width: 53%;
     position: relative;
