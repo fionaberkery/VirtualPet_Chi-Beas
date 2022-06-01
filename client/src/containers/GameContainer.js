@@ -6,7 +6,6 @@ import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
 import startButton from '../images/start.png';
-import playAgainButton from '../images/playagain.png';
 import homeButton from '../images/home.png';
 import surpriseMeButton from '../images/suprise.png'
 import { Idle } from '../components/Monster';
@@ -314,10 +313,13 @@ const handleNameInput = (event) => {
 
       {!playing && finished &&        
       <>
-        <FinishPage monsters={monsters} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
-        <Grave className="canvas"></Grave>
-        <button className="game-button" onClick={startGame}> <img src={playAgainButton} width="160" height="40" /></button>
-      </>}      
+
+        <FinishPage monsters={monsters} startGame={startGame} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
+        {/* <Grave className="canvas"></Grave> */}
+        
+      </>}
+      
+
     </>
 
   )}
