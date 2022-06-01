@@ -5,9 +5,10 @@
 #background-image {
     position: absolute;
     z-index: -1;
+    transform: scale(1.5, 1)
 }
 
-#eye,  #eye_2{
+#eye-l,  #eye-r{
     animation: moveEyes 4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
