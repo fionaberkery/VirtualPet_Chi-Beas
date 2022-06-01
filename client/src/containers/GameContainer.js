@@ -234,7 +234,7 @@ const handleNameInput = (event) => {
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
         <br></br>
         <div className="egg">
-        <button id="start-button" onClick={startGame} className='game-button' > <img src={startButton} width="130"/> </button>
+        <button id="start-button" onClick={startGame} className='game-button' > <img src={startButton} width="130" alt="Button to start the game"/> </button>
         <Egg className="canvas"></Egg>
         </div>
       </>}
@@ -243,10 +243,8 @@ const handleNameInput = (event) => {
       <>
       <h1 className="header">Home Sweet Home</h1> 
         <div className='animation'>
-        
-        <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" /></button>
-        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>  
-        <Idle className="canvas"></Idle>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
+          <Idle className="canvas"></Idle>
         </div>
       
       </>}
@@ -255,9 +253,9 @@ const handleNameInput = (event) => {
       <>
         <h1 className="header">Yum Yum!</h1> 
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
-        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>  
-        <Eating className="canvas"></Eating>       
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
+          <Eating className="canvas"></Eating>       
         </div>
       </>}
 
@@ -266,9 +264,9 @@ const handleNameInput = (event) => {
 
         <h1 className="header">Oopsie poopsie</h1>
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
-        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>    
-        <Poop className="canvas"></Poop>    
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
+          <Poop className="canvas"></Poop>    
         </div>
       </>}
 
@@ -277,9 +275,9 @@ const handleNameInput = (event) => {
 
         <h1 className="header">I'm feeling peely-wally</h1> 
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40"/></button>
-        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>   
-        <Sick className="canvas"></Sick>      
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
+          <Sick className="canvas"></Sick>      
         </div>
       </>}
 
@@ -287,9 +285,9 @@ const handleNameInput = (event) => {
       <>
         <h1 className="header">Playing wi ma ball</h1>
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
-        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>     
-        <Play className="canvas"></Play>    
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
+          <Play className="canvas"></Play>    
         </div>
       </>}
 
@@ -297,9 +295,9 @@ const handleNameInput = (event) => {
       <>
         <h1 className="header">Brb... havin a snooze </h1>
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
-        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>      
-        <Snoozin className="canvas"></Snoozin>   
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>     
+          <Snoozin className="canvas"></Snoozin>   
         </div>
       </>}
 
@@ -307,9 +305,9 @@ const handleNameInput = (event) => {
       <>
         <h1 className="header">Death from Above</h1>
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
-        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </butt
-        <Crush className="canvas"></Crush>   
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
+          <Crush className="canvas"></Crush>   
         </div>          
       </>}
 
@@ -317,19 +315,19 @@ const handleNameInput = (event) => {
       <>
         <h1 className="header">Stayin' Aliveee 🎶</h1>
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
-        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>
-       <Dance className="canvas"></Dance>        
-       </div>
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
+          <Dance className="canvas"></Dance>        
+        </div>
       </>}
 
       {playing && fire &&
       <>
         <h1 className="header">I'm on Fire</h1>
         <div className='animation'>
-        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
-        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button> 
-        <Fire className="canvas"></Fire>
+          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
+          <Fire className="canvas"></Fire>
        </div>
 
       </>}
