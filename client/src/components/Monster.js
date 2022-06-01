@@ -16,6 +16,7 @@ const spriteHeight = 120
 let frameX = 0
 let frameY = 0
 let gameFrame = 0
+
 const staggerFrames = 6
 const staggerFramesPoop = 10
 const staggerFramesIdle = 7
@@ -25,6 +26,7 @@ const staggerFramesSick = 12
 const staggerFramesEating = 10
 const staggerFramesSnoozin = 15
 const staggerFramesFire = 15
+
 
 const Egg = props =>{
 
@@ -281,8 +283,10 @@ export const Crush = props =>{
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
         context.drawImage(crushImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+
             if (gameFrame % staggerFramesEating == 0){
             if (frameX < 6) frameX++ 
+
             else frameX = 0
             }
             gameFrame++
