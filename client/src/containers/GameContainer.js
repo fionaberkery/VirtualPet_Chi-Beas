@@ -1,7 +1,6 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
-
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
@@ -14,11 +13,12 @@ import { Sick } from '../components/Monster';
 import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
+import { Poop } from '../components/Monster';
+import { Crush } from '../components/Monster';
 import { Poop } from '../components/Monster'
-import Background from '../components/Background';
-const gameTime = 15000000;
 import { Snoozin } from '../components/Monster';
-import HealthBar from '../components/Healthbar';
+import Background from '../components/Background';
+const gameTime = 150000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -36,6 +36,7 @@ const  Game = ()=> {
   const [idle, setIdle] = useState(true)
   const [play, setPlay] = useState(false)
   const [sick, setSick] = useState(false)
+  const [crush, setCrush] = useState(false)
   const [snoozin, setSnoozin] = useState(false)
 
   useEffect(() => {
@@ -58,6 +59,7 @@ const  Game = ()=> {
     setPoop(false)
     setPlay(false)
     setSick(false)
+    setCrush(false)
     setSnoozin(false)
   } 
 
@@ -91,6 +93,7 @@ const handleFeedClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setSnoozin(false)
   setFeed(true)
 }
@@ -99,6 +102,7 @@ const handleIdleClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setSnoozin(false)
   setIdle(true)  
 }
@@ -109,6 +113,7 @@ const handlePlayClick = () => {
   setFeed(false)
   setPoop(false)
   setSick(false)
+  setCrush(false)
   setSnoozin(false)
   setPlay(true)
 }
@@ -119,6 +124,7 @@ const handlePoopClick = () => {
   setFeed(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setSnoozin(false)
   setPoop(true)
 }
@@ -129,8 +135,19 @@ const handleSickClick = () => {
   setFeed(false)
   setPoop(false)
   setPlay(false)
+  setCrush(false)
   setSnoozin(false)
   setSick(true)
+}
+const handleCrushClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime - 3000)
+  setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
+  setSnoozin(false)
+  setCrush(true)
 }
 
 const handleSnoozeClick = () => {
@@ -140,10 +157,12 @@ const handleSnoozeClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setCrush(false)
   setSnoozin(true)
 }
 
-const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleSnoozeClick]
+
+const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleCrushClick, handleSnoozeClick]
 
 const handleRandomEvent = () => {
   const randomIndex = (n) => {
@@ -217,7 +236,7 @@ const handleNameInput = (event) => {
 
       {playing && play &&
       <>
-        <h1 iclassName="header">Playing w ma balls</h1>
+        <h1 className="header">Playing w ma balls</h1>
         <Play id="canvas"></Play>
         <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
         <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
@@ -225,10 +244,18 @@ const handleNameInput = (event) => {
 
       {playing && snoozin &&
       <>
-        <h1 id="header">Brb... havin a snooze </h1>
+        <h1 className="header">Brb... havin a snooze </h1>
         <Snoozin id="canvas"></Snoozin>
         <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
         <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
+      </>}
+
+      {playing && crush &&
+      <>
+        <h1 className="header">Death from Above</h1>
+        <Play id="canvas"></Play>
+        <button onClick={handleIdleClick}>Home</button>
+        <button onClick={handleRandomEvent}>Surprise Me</button>         
       </>}
 
       {!playing && finished &&
