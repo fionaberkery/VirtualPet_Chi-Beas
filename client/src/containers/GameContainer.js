@@ -317,11 +317,9 @@ const handleNameInput = (event) => {
         <FinishPage monsters={monsters} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
         <Grave className="canvas"></Grave>
         <button className="game-button" onClick={startGame}> <img src={playAgainButton} width="160" height="40" /></button>
-      </>}
-      
+      </>}      
     </>
 
   )}
       
-
 export default Game;
