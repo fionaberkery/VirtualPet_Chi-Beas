@@ -20,7 +20,7 @@ import { Dance } from '../components/Monster';
 import { Fire } from '../components/Monster';
 import Background from '../components/Background';
 
-const gameTime = 1500000;
+const gameTime = 60000;
 const oneSecond = 1000
 
 const  Game = ()=> {
