@@ -1,5 +1,6 @@
 import React from "react";
 import HighScoresList from "./HighScoresList";
+import Credits from "./Credits";
 import { postMonster } from '../services/GameServices'
 import saveButton from '../images/save.png'
 import gameOver from '../images/gameover.png'
@@ -17,32 +18,27 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
     return (
 
         <> 
-        <div id="f-p">           
-            <img src={gameOver} width="500" height="50"/>
-            <h1 id="finish-page-text"> {name} is dead </h1>
-            <h3>Final Score : {finalScore} </h3>            
-            <button onClick={handleSaveButton} className='game-button' > <img src={saveButton} width="100" height='40' /> </button>
-            <HighScoresList deleteMonster={deleteMonster} monsters={monsters} />
-            <h1>Credits</h1>
-                <ul>
-                    <il>
-                        <h5>FIO (fionaberkery)</h5>
-                        <a href='https://github.com/fionaberkery'>view gitHub</a>
-                    </il>
-                    <il>
-                        <h5>SAN (sandramolina)- </h5>
-                        <a href='https://github.com/sandramolina'>view gitHub</a>
-                    </il>
-                    <il>
-                        <h5>AND (andrewredman91)</h5>
-                        <a href='https://github.com/andrewredman91'>view gitHub</a>
-                    </il>
-                    <li>
-                        <h5>AAR (aaronhubber)</h5>
-                        <a href='https://github.com/aaronhubber'> view gitHub</a>
-                    </li>
-                </ul>
+        <div id="flex-container">           
+            
+            <img id="game-over" src={gameOver} width="400" height="40"/>
+
+            <section id="f-p-details">
+                <p className="finish-page-text" id="is-dead"> {name} is dead, Final Score : {finalScore} </p>            
+                <button onClick={handleSaveButton} className='game-button' id="save-button"> <img src={saveButton} width="60" height='25' /> </button>
+                
+            </section>
+        
+            
+            <div id="finish-page-container">
+            <div id="high-scores-list">
+                <HighScoresList  deleteMonster={deleteMonster} monsters={monsters} />
                 </div>
+                <div id="credits">
+                <Credits  />
+                </div>
+            </div>
+
+        </div>
         </>
     )
 }

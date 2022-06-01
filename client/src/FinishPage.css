@@ -1,3 +1,74 @@
-/* #f-p {
-    background-color: aquamarine;
-} */
+#game-over {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.finish-page-text {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#f-p-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#save-button {
+    padding:10px;
+    margin-left: 10px;
+}
+
+#is-dead {
+    font-size: large
+}
+
+#finish-page-container {
+    margin-top: 200px;
+    display: grid;
+    grid-template-areas:
+    "high-scores-list credits";
+}
+
+#credits {
+    border-style:dashed;
+    border-width: 10px;
+    background-color: rgb(255, 255, 255, 0.8);
+    margin: 20px;
+    width: 500px;
+    padding: 50px
+}
+
+#high-scores-list {
+    border-style:dashed;
+    border-width: 10px;
+    background-color: rgb(255, 255, 255, 0.8);
+    margin: 20px;
+    margin-left: 200px;
+    width: 500px;
+    padding: 50px;
+
+}
+
+#full-credits {
+    margin: 20px;
+    text-align: center;
+    
+}
+
+#f-p-top-info {
+    border-style:dashed;
+    border-width: 1px;
+    background-color: rgb(255, 255, 255, 0.8);
+}
