@@ -9,8 +9,9 @@ const HighScoresList = ({monsters, deleteMonster}) => {
 
     return (
             <>
-                <h2>High Scores</h2>
+                <div className="finish-page-text">
                 {theScoresList}
+                </div>
             </>
     )
 }
