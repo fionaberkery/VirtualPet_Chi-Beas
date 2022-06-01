@@ -31,14 +31,13 @@ const Egg = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(eggImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFrames == 0){
-        if (frameX < 4) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(eggImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFrames == 0){
+            if (frameX < 4) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -67,14 +66,13 @@ export const Eating = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(eatingImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesEating == 0){
-        if (frameX < 9) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(eatingImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFramesEating == 0){
+            if (frameX < 9) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -104,14 +102,13 @@ export const Sick = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(sickguyImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFrames == 0){
-        if (frameX < 4) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(sickguyImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFrames == 0){
+            if (frameX < 4) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -140,14 +137,13 @@ export const Poop = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(poopImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFrames == 0){
-        if (frameX < 4) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(poopImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFrames == 0){
+            if (frameX < 4) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -176,14 +172,13 @@ export const Play = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(playImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesPlay == 0){
-        if (frameX < 9) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(playImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFramesPlay == 0){
+            if (frameX < 9) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -212,14 +207,13 @@ export const Idle = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(idleImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesIdle == 0){
-        if (frameX < 9) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(idleImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFramesIdle == 0){
+            if (frameX < 9) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -248,14 +242,13 @@ export const Grave = props =>{
 
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(graveImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesGrave == 0){
-        if (frameX < 4) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(graveImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFramesGrave == 0){
+            if (frameX < 4) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
@@ -279,14 +272,15 @@ export const Crush = props =>{
     const canvasRef = useRef (null)
     const crushImage = new Image ()
     crushImage.src = crush
+
     const draw = (context) => {
-  context.drawImage(crushImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesEating == 0){
-        if (frameX < 9) frameX++ 
-       else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(crushImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+            if (gameFrame % staggerFramesEating == 0){
+                if (frameX < 9) frameX++ 
+            else frameX = 0
+            }
+            gameFrame++
+            context.fill()
     } 
 
     useEffect (() =>{
@@ -310,16 +304,16 @@ export const Snoozin = props =>{
     const canvasRef = useRef (null)
     const snoozinImage = new Image()
     snoozinImage.src = snoozin
+
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
-      // context.fillReact = (100,30,100,100)
-    context.drawImage(snoozinImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFrames == 0){
-        if (frameX < 3) frameX++ 
-        else frameX = 0
-    }
-    gameFrame++
-    context.fill()
+        context.drawImage(snoozinImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+        if (gameFrame % staggerFrames == 0){
+            if (frameX < 3) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
     } 
 
     useEffect (() =>{
