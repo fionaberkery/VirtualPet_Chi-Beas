@@ -229,6 +229,7 @@ const handleNameInput = (event) => {
     
     {!playing && !finished &&
       <>
+      <h2>Chi-Beas - Welcome to a world of death, dancing and destruction</h2>
         <h1 className="header">Start Game</h1> 
         <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>

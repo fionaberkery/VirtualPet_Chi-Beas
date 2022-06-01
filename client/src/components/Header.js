@@ -10,7 +10,7 @@ const Header = ({endGame, internalTime, timeRate, changeInternalTime, tempFinalS
         {
             playing ? 
             <div className="head-container">
-            <h2>Chi-Beas - Welcome to a world of death, dancing and destruction</h2>
+                <br></br>
                 <p id="cb-name"> {name} </p>
                 <button onClick={endGame} className='game-button'> <img src={endGameButton} width="150"/> </button>
                 <p> {`Time: ${internalTime / 1000}s`} </p>
