@@ -8,7 +8,7 @@ import Egg from '../components/Monster';
 import startButton from '../images/start.png';
 import playAgainButton from '../images/playagain.png';
 import homeButton from '../images/home.png';
-import surpriseMeButton from '../images/surprise.png';
+import surpriseMeButton from '../images/suprise.png'
 import { Idle } from '../components/Monster';
 import { Sick } from '../components/Monster';
 import { Grave } from '../components/Monster';
