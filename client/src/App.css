@@ -64,7 +64,6 @@
 }
 
 .header {
-
     font-family: 'Press Start 2P', cursive;
     margin-block-start: 0px;
 }
@@ -101,32 +100,36 @@ button {
     image-rendering: pixelated;
 }
 
-.canvas{
-
-    height: 300px
-}
-
-.egg{
+#egg{
     display: flex;
-    flex-flow:column wrap;
-    width: 50%;
-    margin-top: 330px;
-    margin-left:400px;
-    height: 1400px
+    flex-direction: column;
+    width: 53%;
+    margin-top: 18%;
+    margin-left: 35%;
 }
 
-.start-screen{
-    display:flex;
-    flex-flow: column wrap;
-}
-
-.animation{
+#idle, #sick {
     display: flex;
-    flex-flow:column wrap;
-    width: 50%;
-    margin-top: 330px;
-    margin-left:400px;
-    height: 1400px
+    flex-direction: column;
+    width: 53%;
+    margin-top: 23%;
+    margin-left: 35%;
+}
+
+#crush, #dance, #fire, #play, #poop, #feed {
+    display: flex;
+    flex-direction: column;
+    width: 53%;
+    margin-top: 21%;
+    margin-left: 35%;
+}
+
+#sleep {
+    display: flex;
+    flex-direction: column;
+    width: 53%;
+    margin-top: 20%;
+    margin-left: 35%;
 }
 
 .health-score{

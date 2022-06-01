@@ -34,6 +34,7 @@ const Egg = props =>{
     eggImage.src = egg
 
     const draw = (context) => {
+        
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
         context.drawImage(eggImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
         if (gameFrame % staggerFrames == 0){
@@ -50,9 +51,9 @@ const Egg = props =>{
         let frameCount = 0
         let animationFrameId
         const render = () => {
-        frameCount++
-        draw(context, frameCount)
-        animationFrameId = window.requestAnimationFrame(render)
+            frameCount++
+            draw(context, frameCount)
+            animationFrameId = window.requestAnimationFrame(render)
     }
     render()
     return () => {
