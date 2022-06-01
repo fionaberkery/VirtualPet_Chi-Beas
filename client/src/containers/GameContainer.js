@@ -20,7 +20,7 @@ import { Dance } from '../components/Monster';
 import { Fire } from '../components/Monster';
 import Background from '../components/Background';
 
-const gameTime = 150000;
+const gameTime = 1500000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -242,94 +242,73 @@ const handleNameInput = (event) => {
     
     {playing && idle &&
       <>
-      <h1 className="header">Home Sweet Home</h1> 
-        <div id="idle">
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
-          <Idle />
-        </div>
-      
+          <h1 className="header">Home Sweet Home</h1> 
+          <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>          
+          <Idle id="idle"/>      
       </>}
     
       {playing && feed &&
       <>
-        <h1 className="header">Yum Yum!</h1> 
-        <div id="feed">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
-          <Eating />    
-        </div>
+        <h1 className="header">Yum Yum!</h1>         
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>  
+        <Eating id="feed" />        
       </>}
 
       {playing && poop &&
       <>
         <h1 className="header">Oopsie poopsie</h1>
-        <div id="poop">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
-          <Poop /> 
-        </div>
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>    
+        <Poop id="poop" /> 
       </>}
 
       {playing && sick &&
       <>
-
         <h1 className="header">I'm feeling peely-wally</h1> 
-        <div id="sick">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
-          <Sick />   
-        </div>
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>     
+        <Sick id="sick"/>
       </>}
 
       {playing && play &&
       <>
         <h1 className="header">Playing wi ma ball</h1>
-        <div id="play">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
-          <Play />    
-        </div>
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>   
+        <Play id="play"/>    
       </>}
 
       {playing && snoozin &&
       <>
         <h1 className="header">Brb... havin a snooze </h1>
-        <div id="sleep">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>     
-          <Snoozin />   
-        </div>
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>       
+        <Snoozin id="sleep" />        
       </>}
 
       {playing && crush &&
       <>
         <h1 className="header">Death from Above</h1>
-        <div id="crush">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
-          <Crush />   
-        </div>          
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>       
+        <Crush id="crush"/>        
       </>}
 
       {playing && dance &&
       <>
         <h1 className="header">Stayin' Aliveee 🎶</h1>
-        <div id="dance">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
-          <Dance />        
-        </div>
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button>
+        <Dance id="dance"/>        
       </>}
 
       {playing && fire &&
       <>
         <h1 className="header">I'm on Fire</h1>
-        <div id="fire">
-          <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
-          <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
-          <Fire />
-        </div>
-
+        <button id="home-btn" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" alt="go back to idle state"/></button>
+        <button onClick={handleRandomEvent} id="surprise-btn" ><img src={surpriseMeButton} width="200" height="40" alt="Generate a random event button"/></button> 
+        <Fire id="fire" />
       </>}
       </div>
 

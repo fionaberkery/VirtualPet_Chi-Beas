@@ -62,8 +62,11 @@
 }
 
 .header {
+    position: fixed;
+    top: 40%;
     font-family: 'Press Start 2P', cursive;
     margin-block-start: 0px;
+    margin-left: 2vw;
 }
 
 button {
@@ -77,6 +80,20 @@ button {
 }
 
 .game-button {
+    border-style: hidden;
+    background-color: transparent;
+}
+
+#surprise-btn {
+    margin-left: 2vw;
+    margin-top: 24%;
+    border-style: hidden;
+    background-color: transparent;
+}
+
+#home-btn {
+    margin-left: 2vw;
+    margin-top: 23%;
     border-style: hidden;
     background-color: transparent;
 }
@@ -111,27 +128,35 @@ button {
     margin-top: -3%;
 }
 
-#idle, #sick {
+ /* {
     display: flex;
     flex-direction: column;
     width: 53%;
-    margin-top: 23%;
+    margin-top: 1%;
+    margin-left: 35%;
+} */
+
+#fire, #sleep, #idle {
+    display: flex;
+    flex-direction: column;
+    width: 53%;
+    margin-top: 1%;
     margin-left: 35%;
 }
 
-#crush, #dance, #fire, #play, #poop, #feed {
+#feed, #poop, #crush, #dance, #play {
     display: flex;
     flex-direction: column;
     width: 53%;
-    margin-top: 21%;
+    margin-top: 2%;
     margin-left: 35%;
 }
 
-#sleep {
+#sick {
     display: flex;
     flex-direction: column;
     width: 53%;
-    margin-top: 20%;
+    margin-top: 4%;
     margin-left: 35%;
 }
 
