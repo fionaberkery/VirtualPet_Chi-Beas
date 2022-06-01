@@ -13,7 +13,7 @@ const Header = ({endGame, internalTime, timeRate, changeInternalTime, tempFinalS
                 <br></br>
                 <p id="cb-name"> {name} </p>
                 <button onClick={endGame} className='game-button'> <img src={endGameButton} width="150"/> </button>
-                <p> {`Time: ${internalTime / 1000}s`} </p>
+                
                 <Timer  
                     timeRate={timeRate} 
                     changeInternalTime={changeInternalTime} 
