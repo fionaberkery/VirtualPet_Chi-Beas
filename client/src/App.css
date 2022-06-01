@@ -128,14 +128,6 @@ button {
     margin-top: -3%;
 }
 
- /* {
-    display: flex;
-    flex-direction: column;
-    width: 53%;
-    margin-top: 1%;
-    margin-left: 35%;
-} */
-
 #fire, #sleep, #idle {
     display: flex;
     flex-direction: column;
