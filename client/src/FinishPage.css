@@ -1,8 +1,7 @@
 #game-over {
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
 }
 
 #flex-container {
@@ -15,14 +14,24 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+#top {
+    border-bottom: solid;;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-style:dashed;
+    border-width: 8px;
+    background-color: rgb(255, 255, 255, 0.8);
+
+}
+
 #f-p-details {
     display: flex;
     justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 60px;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 1.5vw;
 }
 
 #save-button {
@@ -35,7 +44,7 @@
 }
 
 #finish-page-container {
-    margin-top: 200px;
+    margin-top: 130px;
     display: grid;
     grid-template-areas:
     "high-scores-list credits";
@@ -71,4 +80,11 @@
     border-style:dashed;
     border-width: 1px;
     background-color: rgb(255, 255, 255, 0.8);
+}
+
+#play-again-button {
+    margin-top: 30px;
+    border-style: hidden;
+    background-color: transparent;
+
 }
