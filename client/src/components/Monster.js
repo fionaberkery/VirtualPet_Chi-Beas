@@ -376,4 +376,39 @@ export const Dance = props =>{
     return <canvas ref={canvasRef} {...props}/>
 }
 
+export const Fire = props =>{
+
+    const canvasRef = useRef (null)
+
+    const fireImage = new Image()
+    fireImage.src = onFire
+
+    const draw = (context) => {
+        context.clearRect (0,0,context.canvas.width, context.canvas.height)
+        context.drawImage(fireImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight)
+        if (gameFrame % staggerFrames == 0){
+            if (frameX < 4) frameX++ 
+            else frameX = 0
+        }
+        gameFrame++
+        context.fill()
+    } 
+
+    useEffect (() =>{
+        const canvas = canvasRef.current
+        const context = canvas.getContext("2d")
+        let frameCount = 0
+        let animationFrameId
+        const render = () => {
+        frameCount++
+        draw(context, frameCount)
+        animationFrameId = window.requestAnimationFrame(render)
+    }
+    render()
+    return () => {
+        window.cancelAnimationFrame(animationFrameId)}
+    },[draw])
+    return <canvas ref={canvasRef} {...props}/>
+}
+
 export default Egg;
