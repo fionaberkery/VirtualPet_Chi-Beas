@@ -15,11 +15,11 @@ const spriteHeight = 120
 let frameX = 0
 let frameY = 0
 let gameFrame = 0
-const staggerFrames = 15
-const staggerFramesIdle = 30
-const staggerFramesGrave = 50
-const staggerFramesPlay = 15
-const staggerFramesEating = 40
+const staggerFrames = 5
+const staggerFramesIdle = 4
+const staggerFramesGrave = 15
+const staggerFramesPlay = 4
+const staggerFramesEating = 6
 
 const Egg = props =>{
 
@@ -316,7 +316,7 @@ export const Snoozin = props =>{
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
       // context.fillReact = (100,30,100,100)
     context.drawImage(snoozinImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesGrave == 0){
+    if (gameFrame % staggerFrames == 0){
         if (frameX < 3) frameX++ 
         else frameX = 0
     }

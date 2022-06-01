@@ -64,6 +64,7 @@
 }
 
 .header {
+
     font-family: 'Press Start 2P', cursive;
     margin-block-start: 0px;
 }
@@ -99,6 +100,40 @@ button {
     -ms-interpolation-mode: nearest-neighbor;
     image-rendering: pixelated;
 }
+
+.canvas{
+
+    height: 300px
+}
+
+.egg{
+    display: flex;
+    flex-flow:column wrap;
+    width: 50%;
+    margin-top: 330px;
+    margin-left:400px;
+    height: 1400px
+}
+
+.start-screen{
+    display:flex;
+    flex-flow: column wrap;
+}
+
+.animation{
+    display: flex;
+    flex-flow:column wrap;
+    width: 50%;
+    margin-top: 330px;
+    margin-left:400px;
+    height: 1400px
+}
+
+.health-score{
+    background-color: #10ec08;
+}
+
+
 
 
 
