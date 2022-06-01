@@ -1,6 +1,6 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
-import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
+import { getMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
 import { Snoozin } from '../components/Monster';
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
@@ -16,8 +16,11 @@ import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
 import { Crush } from '../components/Monster';
+import { Dance } from '../components/Monster';
+import { Fire } from '../components/Monster';
 import Background from '../components/Background';
-const gameTime = 300000;
+
+const gameTime = 150000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -37,6 +40,8 @@ const  Game = ()=> {
   const [sick, setSick] = useState(false)
   const [crush, setCrush] = useState(false)
   const [snoozin, setSnoozin] = useState(false)
+  const [dance, setDance] = useState(false)
+  const [fire, setFire] = useState(false)
 
   useEffect(() => {
     if (internalTime <= 0) {
@@ -60,6 +65,8 @@ const  Game = ()=> {
     setSick(false)
     setCrush(false)
     setSnoozin(false)
+    setDance(false)
+    setFire(false)
   } 
 
 const startGame = (()=>{
@@ -86,25 +93,20 @@ const deleteMonster = (id) => {
     setMonsters(temp)
   })}
 
+const handleIdleClick = () => idleState() 
+
 const handleFeedClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime + 10000)
+  setInternalTime((currentInternalTime) => currentInternalTime + 12000)
   setIdle(false)
   setPoop(false)
   setPlay(false)
   setSick(false)
   setCrush(false)
   setSnoozin(false)
+  setDance(false)
+  setFire(false)
   setFeed(true)
-}
-const handleIdleClick = () => {
-  setFeed(false)
-  setPoop(false)
-  setPlay(false)
-  setSick(false)
-  setCrush(false)
-  setSnoozin(false)
-  setIdle(true)  
-}
+} 
 
 const handlePlayClick = () => {
   setInternalTime((currentInternalTime) => currentInternalTime + 8000)
@@ -114,54 +116,90 @@ const handlePlayClick = () => {
   setSick(false)
   setCrush(false)
   setSnoozin(false)
+  setDance(false)
+  setFire(false)
   setPlay(true)
 }
 
 const handlePoopClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime - 5000)
+  setInternalTime((currentInternalTime) => currentInternalTime - 3000)
   setIdle(false)
   setFeed(false)
   setPlay(false)
   setSick(false)
   setCrush(false)
   setSnoozin(false)
+  setDance(false)
+  setFire(false)
   setPoop(true)
 }
 
 const handleSickClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime - 10000)
+  setInternalTime((currentInternalTime) => currentInternalTime - 5000)
   setIdle(false)
   setFeed(false)
   setPoop(false)
   setPlay(false)
   setCrush(false)
   setSnoozin(false)
+  setDance(false)
+  setFire(false)
   setSick(true)
 }
+
 const handleCrushClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime - 3000)
+  setInternalTime((currentInternalTime) => currentInternalTime - 8000)
   setIdle(false)
   setFeed(false)
   setPoop(false)
   setPlay(false)
   setSick(false)
   setSnoozin(false)
+  setDance(false)
+  setFire(false)
   setCrush(true)
 }
 
 const handleSnoozeClick = () => {
-  setInternalTime((currentInternalTime) => currentInternalTime - 10000)
+  setInternalTime((currentInternalTime) => currentInternalTime + 5000)
   setIdle(false)
   setFeed(false)
   setPoop(false)
   setPlay(false)
   setSick(false)
   setCrush(false)
+  setDance(false)
+  setFire(false)
   setSnoozin(true)
 }
 
+const handleDanceClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime + 3000)
+  setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
+  setCrush(false)
+  setSnoozin(false)
+  setFire(false)
+  setDance(true)
+}
 
-const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleCrushClick, handleSnoozeClick]
+const handleFireClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime - 12000)
+  setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
+  setCrush(false)
+  setSnoozin(false)
+  setDance(false)
+  setFire(true)
+}
+
+const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleCrushClick, handleSnoozeClick, handleDanceClick, handleFireClick, handleDanceClick, handlePoopClick, handleSnoozeClick]
 
 const handleRandomEvent = () => {
   const randomIndex = (n) => {
@@ -226,7 +264,7 @@ const handleNameInput = (event) => {
       {playing && poop &&
       <>
 
-        <h1 className="header">Opsie poopsie</h1>
+        <h1 className="header">Oopsie poopsie</h1>
         <div className='animation'>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>    
@@ -237,7 +275,7 @@ const handleNameInput = (event) => {
       {playing && sick &&
       <>
 
-        <h1 className="header">I'm feeling peely wally</h1> 
+        <h1 className="header">I'm feeling peely-wally</h1> 
         <div className='animation'>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40"/></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>   
@@ -247,7 +285,7 @@ const handleNameInput = (event) => {
 
       {playing && play &&
       <>
-        <h1 className="header">Playing w ma balls</h1>
+        <h1 className="header">Playing wi ma ball</h1>
         <div className='animation'>
         <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
         <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>     
@@ -269,10 +307,31 @@ const handleNameInput = (event) => {
       <>
         <h1 className="header">Death from Above</h1>
         <div className='animation'>
-        <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me</button>     
+        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
+        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </butt
         <Crush className="canvas"></Crush>   
-        </div> 
+        </div>          
+      </>}
+
+      {playing && dance &&
+      <>
+        <h1 className="header">Stayin' Aliveee 🎶</h1>
+        <div className='animation'>
+        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
+        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>
+       <Dance className="canvas"></Dance>        
+       </div>
+      </>}
+
+      {playing && fire &&
+      <>
+        <h1 className="header">I'm on Fire</h1>
+        <div className='animation'>
+        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
+        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button> 
+        <Fire className="canvas"></Fire>
+       </div>
+
       </>}
       </div>
 
