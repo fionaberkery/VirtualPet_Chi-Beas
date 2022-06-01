@@ -1,8 +1,7 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
-import Score from '../components/Score';
-import Timer from '../components/Timer';
+
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
@@ -15,11 +14,11 @@ import { Sick } from '../components/Monster';
 import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
-import { Poop } from '../components/Monster';
+import { Poop } from '../components/Monster'
+import Background from '../components/Background';
+const gameTime = 15000000;
 import { Snoozin } from '../components/Monster';
 import HealthBar from '../components/Healthbar';
-
-const gameTime = 150000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -170,10 +169,11 @@ const handleNameInput = (event) => {
     <>
     <div id="all-game">
     <Header endGame={endGame} internalTime={internalTime} timeRate={timeRate} changeInternalTime={changeInternalTime} tempFinalScore={tempFinalScore} playing={playing} name={name}/>
+    <Background/>
 
     {!playing && !finished &&
       <>
-        <h1 id="header">Start Game</h1> 
+        <h1 className="header">Start Game</h1> 
         <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
         <br></br>
@@ -183,7 +183,7 @@ const handleNameInput = (event) => {
     
     {playing && idle &&
       <>
-        <h1 id="header">Home Sweet Home</h1> 
+        <h1 className="header">Home Sweet Home</h1> 
         <Idle id="canvas"></Idle>
         <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" /></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>        
@@ -191,7 +191,7 @@ const handleNameInput = (event) => {
     
       {playing && feed &&
       <>
-        <h1 id="header">Yum Yum!</h1> 
+        <h1 className="header">Yum Yum!</h1> 
         <Eating id="canvas"></Eating>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>         
@@ -199,7 +199,8 @@ const handleNameInput = (event) => {
 
       {playing && poop &&
       <>
-        <h1 id="header">Oopsie poopsie</h1>
+
+        <h1 className="header">Opsie poopsie</h1>
         <Poop id="canvas"></Poop>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>        
@@ -207,7 +208,8 @@ const handleNameInput = (event) => {
 
       {playing && sick &&
       <>
-        <h1 id="header">I'm feeling peely-wally</h1> 
+
+        <h1 className="header">I'm feeling peely wally</h1> 
         <Sick id="canvas"></Sick>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40"/></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>         
@@ -215,7 +217,7 @@ const handleNameInput = (event) => {
 
       {playing && play &&
       <>
-        <h1 id="header">Playing w ma balls</h1>
+        <h1 iclassName="header">Playing w ma balls</h1>
         <Play id="canvas"></Play>
         <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
         <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
@@ -241,7 +243,5 @@ const handleNameInput = (event) => {
 
   )}
       
-      
-
 
 export default Game;
