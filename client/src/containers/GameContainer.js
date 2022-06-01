@@ -1,7 +1,7 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
-
+import { Snoozin } from '../components/Monster';
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
@@ -16,9 +16,8 @@ import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster'
 import Background from '../components/Background';
-const gameTime = 15000000;
-import { Snoozin } from '../components/Monster';
-import HealthBar from '../components/Healthbar';
+const gameTime = 150000;
+
 const oneSecond = 1000
 
 const  Game = ()=> {
