@@ -6,16 +6,20 @@ import Timer from '../components/Timer';
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
-import startButton from '../images/start_button.png'
+import startButton from '../images/start.png'
+import playAgainButton from '../images/playagain.png'
+import homeButton from '../images/home.png'
+import surpriseMeButton from '../images/surprise.png'
 import { Idle } from '../components/Monster';
 import { Sick } from '../components/Monster';
 import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
+import { Snoozin } from '../components/Monster';
 import HealthBar from '../components/Healthbar';
 
-const gameTime = 15000;
+const gameTime = 150000;
 const oneSecond = 1000
 
 const  Game = ()=> {
@@ -33,6 +37,7 @@ const  Game = ()=> {
   const [idle, setIdle] = useState(true)
   const [play, setPlay] = useState(false)
   const [sick, setSick] = useState(false)
+  const [snoozin, setSnoozin] = useState(false)
 
   useEffect(() => {
     if (internalTime <= 0) {
@@ -54,6 +59,7 @@ const  Game = ()=> {
     setPoop(false)
     setPlay(false)
     setSick(false)
+    setSnoozin(false)
   } 
 
 const startGame = (()=>{
@@ -86,6 +92,7 @@ const handleFeedClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setSnoozin(false)
   setFeed(true)
 }
 const handleIdleClick = () => {
@@ -93,6 +100,7 @@ const handleIdleClick = () => {
   setPoop(false)
   setPlay(false)
   setSick(false)
+  setSnoozin(false)
   setIdle(true)  
 }
 
@@ -102,6 +110,7 @@ const handlePlayClick = () => {
   setFeed(false)
   setPoop(false)
   setSick(false)
+  setSnoozin(false)
   setPlay(true)
 }
 
@@ -111,6 +120,7 @@ const handlePoopClick = () => {
   setFeed(false)
   setPlay(false)
   setSick(false)
+  setSnoozin(false)
   setPoop(true)
 }
 
@@ -120,10 +130,21 @@ const handleSickClick = () => {
   setFeed(false)
   setPoop(false)
   setPlay(false)
+  setSnoozin(false)
   setSick(true)
 }
 
-const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick]
+const handleSnoozeClick = () => {
+  setInternalTime((currentInternalTime) => currentInternalTime - 10000)
+  setIdle(false)
+  setFeed(false)
+  setPoop(false)
+  setPlay(false)
+  setSick(false)
+  setSnoozin(true)
+}
+
+const handlersArray = [handleFeedClick, handlePlayClick, handlePoopClick, handleSickClick, handleSnoozeClick]
 
 const handleRandomEvent = () => {
   const randomIndex = (n) => {
@@ -156,7 +177,7 @@ const handleNameInput = (event) => {
         <label  htmlFor='name-input'> Enter Your CB name here </label><br></br>
         <input onChange={handleNameInput} name="name-input" type="text" value={name} maxLength="3" className="input-name"></input>
         <br></br>
-        <button id="start-button" onClick={startGame}> <img id="start-button-image" src={startButton} width="100"/> </button>
+        <button id="start-button" onClick={startGame} className='game-button' > <img src={startButton} width="130"/> </button>
         <Egg id="canvas"></Egg>
       </>}
     
@@ -164,40 +185,48 @@ const handleNameInput = (event) => {
       <>
         <h1 id="header">Home Sweet Home</h1> 
         <Idle id="canvas"></Idle>
-        <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me</button>        
+        <button className="game-button" onClick={handleIdleClick}><img src={homeButton} width="120" height="40" /></button>
+        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>        
       </>}
     
       {playing && feed &&
       <>
         <h1 id="header">Yum Yum!</h1> 
         <Eating id="canvas"></Eating>
-        <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me</button>         
+        <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
+        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>         
       </>}
 
       {playing && poop &&
       <>
-        <h1 id="header">Opsie poopsie</h1>
+        <h1 id="header">Oopsie poopsie</h1>
         <Poop id="canvas"></Poop>
-        <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me </button>        
+        <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
+        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>        
       </>}
 
       {playing && sick &&
       <>
-        <h1 id="header">I'm feeling peely wally</h1> 
+        <h1 id="header">I'm feeling peely-wally</h1> 
         <Sick id="canvas"></Sick>
-        <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me</button>         
+        <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40"/></button>
+        <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>         
       </>}
 
       {playing && play &&
       <>
         <h1 id="header">Playing w ma balls</h1>
         <Play id="canvas"></Play>
-        <button onClick={handleIdleClick}>Home</button>
-        <button onClick={handleRandomEvent}>Surprise Me</button>         
+        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
+        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
+      </>}
+
+      {playing && snoozin &&
+      <>
+        <h1 id="header">Brb... havin a snooze </h1>
+        <Snoozin id="canvas"></Snoozin>
+        <button onClick={handleIdleClick} className="game-button"> <img src={homeButton} width="120" height="40"/> </button>
+        <button onClick={handleRandomEvent} className="game-button"> <img src={surpriseMeButton} width="200" height="40"/> </button>         
       </>}
 
       {!playing && finished &&
@@ -205,7 +234,7 @@ const handleNameInput = (event) => {
       <>
         <FinishPage monsters={monsters} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
         <Grave id="canvas"></Grave>
-        <button id="start-button" onClick={startGame}> Play Again </button>
+        <button className="game-button" onClick={startGame}> <img src={playAgainButton} width="160" height="40" /></button>
       </>}
       </div>
     </>

@@ -57,6 +57,8 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// update a score 
+
 return router
 
 };

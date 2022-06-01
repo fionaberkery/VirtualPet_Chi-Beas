@@ -5,9 +5,30 @@
 }
 
 .input-name {
- text-transform: uppercase;
- font-family: 'Press Start 2P', cursive;
- width: 100px;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    width: 100px;
+    height:30px;
+    box-sizing: border-box;
+    border: 3px solid rgb(112, 112, 112);
+    background-color: #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.input-name:focus {
+    border: 3px solid black;
+}
+
+#cb-name {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#finish-page-text {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #all-game {
@@ -22,11 +43,7 @@ button {
     cursor: pointer;
 }
 
-#start-button-image {
-    border-style: hidden;
-}
-
-#start-button {
+.game-button {
     border-style: hidden;
     background-color: white;
 }
