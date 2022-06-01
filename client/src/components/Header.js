@@ -10,8 +10,8 @@ const Header = ({endGame, internalTime, timeRate, changeInternalTime, tempFinalS
             playing ? 
             <div className="head-container">
                 <br></br>
-                <p id="cb-name"> {name} </p>
-                <button onClick={endGame} className='game-button'> <img src={endGameButton} width="150"/> </button>      
+                <p id="cb-name"> CB: {name} </p>
+                <p id="health-tag"> ⬇ Health ⬇</p>                
                 <Timer  
                     timeRate={timeRate} 
                     changeInternalTime={changeInternalTime} 

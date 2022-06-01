@@ -10,7 +10,6 @@ import homeButton from '../images/home.png';
 import surpriseMeButton from '../images/suprise.png'
 import { Idle } from '../components/Monster';
 import { Sick } from '../components/Monster';
-import { Grave } from '../components/Monster';
 import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
@@ -73,6 +72,11 @@ const startGame = (()=>{
     setPlaying (true)
     setFinished(false)
     setInternalTime(gameTime)
+})
+
+const reStartGame = (()=>{
+  setPlaying (false)
+  setFinished(false)
 })
 
 const endGame = (()=>{
@@ -314,9 +318,7 @@ const handleNameInput = (event) => {
       {!playing && finished &&        
       <>
 
-        <FinishPage monsters={monsters} startGame={startGame} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage> 
-        {/* <Grave className="canvas"></Grave> */}
-        
+        <FinishPage monsters={monsters} reStartGame={reStartGame} finalScore={finalScore} name={name} addMonster={addMonster} deleteMonster={deleteMonster}></FinishPage>        
       </>}
       
 
