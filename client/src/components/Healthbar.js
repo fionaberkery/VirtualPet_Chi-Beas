@@ -16,8 +16,8 @@ const HealthBar = ({internalTime})=>{
 
     return(
         <>
-        <div className='healthbar'>
-            <div className='healthbar-inner' style={style} ></div>
+        <div className='healthbar'>Health
+            <div className='healthbar-inner' style={style} > ❤️ </div>
         </div>
         </>
     )

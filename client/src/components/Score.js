@@ -13,7 +13,7 @@ const Score = ({ tempFinalScore, onEnd, internalTime}) => {
     }}, [internalTime, onEnd])
     
     return (
-            <div> Running score : {runningScore} </div>
+            <div className='style-element'> Running score : {runningScore} </div>
             )
     }
 
