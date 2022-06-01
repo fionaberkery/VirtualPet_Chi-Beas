@@ -199,7 +199,7 @@ const handleNameInput = (event) => {
 
       {playing && poop &&
       <>
-        <h1 id="header">Opsie poopsie</h1>
+        <h1 id="header">Oopsie poopsie</h1>
         <Poop id="canvas"></Poop>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40" /></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40"/></button>        
@@ -207,7 +207,7 @@ const handleNameInput = (event) => {
 
       {playing && sick &&
       <>
-        <h1 id="header">I'm feeling peely wally</h1> 
+        <h1 id="header">I'm feeling peely-wally</h1> 
         <Sick id="canvas"></Sick>
         <button onClick={handleIdleClick} className="game-button"><img src={homeButton} width="120" height="40"/></button>
         <button onClick={handleRandomEvent} className="game-button"><img src={surpriseMeButton} width="200" height="40" /></button>         

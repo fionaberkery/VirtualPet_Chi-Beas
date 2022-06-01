@@ -21,6 +21,11 @@
     border: 3px solid black;
 }
 
+#cb-name {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
 #finish-page-text {
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
