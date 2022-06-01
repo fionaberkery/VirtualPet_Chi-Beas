@@ -1,42 +1,88 @@
 :root {
-    --bar-fill: #57e705;
-    --bar-top: #6aff03;
     --pixel-size: 7;
 }
 
+#background-image {
+    position: absolute;
+    z-index: -1;
+    transform: scale(1.5, 1)
+}
+
+#eye-l,  #eye-r{
+    animation: moveEyes 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 2s;
+}
+
+@keyframes moveEyes {
+    from {        
+        transform: translateX(3%);
+    }
+    70% {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-1%);
+    }
+}
+
 .input-name {
- text-transform: uppercase;
- font-family: 'Press Start 2P', cursive;
- width: 100px;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    width: 100px;
+    margin-block-start: 0px;
+    height:30px;
+    box-sizing: border-box;
+    border: 3px solid rgb(112, 112, 112);
+    background-color: #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.input-name:focus {
+    border: 3px solid black;
+}
+
+#cb-name {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#finish-page-text {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #all-game {
     font-family: 'Press Start 2P', cursive;
 }
 
-#header {
+.head-container {
+    position: absolute;
+}
+
+.header {
     font-family: 'Press Start 2P', cursive;
+    margin-block-start: 0px;
 }
 
 button {
     cursor: pointer;
 }
 
-#start-button-image {
-    border-style: hidden;
-}
-
-#start-button {
+.game-button {
     border-style: hidden;
     background-color: white;
 }
 
 .healthbar {
-        width: auto;
-        height: 30px;
-        display: block;
-        width: calc(38px * var(--pixel-size));
-        margin: 2vw;
+    width: auto;
+    height: 30px;
+    display: block;
+    width: calc(38px * var(--pixel-size));
+    margin: 2vw;
 }
 
 .healthbar-inner {

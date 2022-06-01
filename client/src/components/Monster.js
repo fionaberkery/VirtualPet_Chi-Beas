@@ -7,6 +7,8 @@ import play from "../images/play.png"
 import poop from "../images/Poop.png"
 import sick from "../images/Sickguy.png"
 import crush from "../images/crush.png"
+import snoozin from "../images/snoozin.png"
+
 
 const spriteWidth = 180
 const spriteHeight = 120
@@ -274,19 +276,47 @@ export const Grave = props =>{
     return <canvas ref={canvasRef} {...props}/>
 }
 
+
 export const Crush = props =>{
-
     const canvasRef = useRef (null)
-
     const crushImage = new Image ()
     crushImage.src = crush
+  context.drawImage(crushImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+    if (gameFrame % staggerFramesEating == 0){
+        if (frameX < 9) frameX++ 
+       else frameX = 0
+    }
+    gameFrame++
+    context.fill()
+    } 
 
+    useEffect (() =>{
+        const canvas = canvasRef.current
+        const context = canvas.getContext("2d")
+        let frameCount = 0
+        let animationFrameId
+        const render = () => {
+        frameCount++
+        draw(context, frameCount)
+        animationFrameId = window.requestAnimationFrame(render)
+    }
+    render()
+    return () => {
+        window.cancelAnimationFrame(animationFrameId)}
+    },[draw])
+    return <canvas ref={canvasRef} {...props}/>
+      
+
+export const Snoozin = props =>{
+    const canvasRef = useRef (null)
+    const snoozinImage = new Image()
+    snoozinImage.src = snoozin
     const draw = (context) => {
         context.clearRect (0,0,context.canvas.width, context.canvas.height)
       // context.fillReact = (100,30,100,100)
-    context.drawImage(crushImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
-    if (gameFrame % staggerFramesEating == 0){
-        if (frameX < 9) frameX++ 
+    context.drawImage(snoozinImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth,spriteHeight)
+    if (gameFrame % staggerFramesGrave == 0){
+        if (frameX < 3) frameX++ 
         else frameX = 0
     }
     gameFrame++
@@ -308,6 +338,7 @@ export const Crush = props =>{
         window.cancelAnimationFrame(animationFrameId)}
     },[draw])
     return <canvas ref={canvasRef} {...props}/>
+
 
 }
 
