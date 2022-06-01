@@ -1,13 +1,14 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react';
 import { getMonsters, postMonsters, deleteMonster as apiDeleteMonster } from '../services/GameServices';
+import { Snoozin } from '../components/Monster';
 import Header from '../components/Header';
 import FinishPage from '../components/FinishPage';
 import Egg from '../components/Monster';
-import startButton from '../images/start.png'
-import playAgainButton from '../images/playagain.png'
-import homeButton from '../images/home.png'
-import surpriseMeButton from '../images/surprise.png'
+import startButton from '../images/start.png';
+import playAgainButton from '../images/playagain.png';
+import homeButton from '../images/home.png';
+import surpriseMeButton from '../images/surprise.png';
 import { Idle } from '../components/Monster';
 import { Sick } from '../components/Monster';
 import { Grave } from '../components/Monster';
@@ -15,8 +16,6 @@ import { Play } from '../components/Monster';
 import { Eating } from '../components/Monster';
 import { Poop } from '../components/Monster';
 import { Crush } from '../components/Monster';
-import { Poop } from '../components/Monster'
-import { Snoozin } from '../components/Monster';
 import Background from '../components/Background';
 const gameTime = 150000;
 const oneSecond = 1000
@@ -253,7 +252,7 @@ const handleNameInput = (event) => {
       {playing && crush &&
       <>
         <h1 className="header">Death from Above</h1>
-        <Play id="canvas"></Play>
+        <Crush id="canvas"></Crush>
         <button onClick={handleIdleClick}>Home</button>
         <button onClick={handleRandomEvent}>Surprise Me</button>         
       </>}
