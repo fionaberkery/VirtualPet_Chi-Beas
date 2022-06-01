@@ -19,7 +19,7 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
 
         <> 
         <div id="flex-container">           
-            <div id="f-p-top-info">
+            
             <img id="game-over" src={gameOver} width="400" height="40"/>
 
             <section id="f-p-details">
@@ -27,7 +27,7 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters}) => 
                 <button onClick={handleSaveButton} className='game-button' id="save-button"> <img src={saveButton} width="60" height='25' /> </button>
                 
             </section>
-            </div>
+        
             
             <div id="finish-page-container">
             <div id="high-scores-list">
