@@ -48,9 +48,40 @@
     border: 3px solid black;
 }
 
-#cb-name {
+#cb-name, #health-tag {
     text-transform: uppercase;
-    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(255, 255, 255, 0.8);
+    margin-left: 4.5vh;
+    margin-top: 5vh;
+}
+
+.style-element{
+    background-color: rgb(255, 255, 255, 0.8);
+    margin-left: 4.5vh;
+    margin-top: 5vh;
+}
+
+.healthbar {
+    width: auto;
+    height: 30px;
+    display: block;
+    width: calc(38px * var(--pixel-size));
+    margin: 2vw;
+}
+
+.healthbar-inner {
+    background: linear-gradient(to left, #10ec08, #f00303);
+    box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
 }
 
 #all-game {
@@ -98,29 +129,6 @@ button {
     background-color: transparent;
 }
 
-.healthbar {
-    width: auto;
-    height: 30px;
-    display: block;
-    width: calc(38px * var(--pixel-size));
-    margin: 2vw;
-}
-
-.healthbar-inner {
-    background: linear-gradient(to left, #10ec08, #f00303);
-    box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 1s ease 0.3s;
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: pixelated;
-}
-
 #egg{
     width: 53%;
     position: relative;
@@ -144,7 +152,7 @@ button {
     margin-left: 35%;
 }
 
-#sick {
+#sick, #grave {
     display: flex;
     flex-direction: column;
     width: 53%;
@@ -177,10 +185,6 @@ button {
     width: fit-content;
 }
 
-.style-element{
-    background-color: rgb(255, 255, 255, 0.8);
-    margin-left: 4.5vh;
-    margin-top: 5vh;
-}
+
 
 
