@@ -32,13 +32,16 @@ const FinishPage = ({finalScore, name, deleteMonster, addMonster, monsters, reSt
 </div>
             <button id="play-again-button" onClick={reStartGame}> <img src={playAgainButton} width="160" height="40" /></button>      
             
+            
             <div id="finish-page-container">
-            <div id="high-scores-list">
-                <HighScoresList  deleteMonster={deleteMonster} monsters={monsters} />
+                <div id="high-scores-list">
+                    <HighScoresList  deleteMonster={deleteMonster} monsters={monsters} />
                 </div>
+                
                 <div id="credits">
-                <Credits  />
-                <Grave id="grave"></Grave>
+                    <Credits  />
+                    <br></br>
+                    <Grave id="grave"></Grave>
                 </div>
             </div>
 
