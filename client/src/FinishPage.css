@@ -44,7 +44,7 @@
 }
 
 #finish-page-container {
-    margin-top: 130px;
+    margin-top: 40px;
     display: grid;
     grid-template-areas:
     "high-scores-list credits";
@@ -64,7 +64,7 @@
     border-width: 10px;
     background-color: rgb(255, 255, 255, 0.8);
     margin: 20px;
-    margin-left: 200px;
+    margin-left: 50px;
     width: 500px;
     padding: 50px;
 
@@ -88,3 +88,23 @@
     background-color: transparent;
 
 }
+
+#blink {
+    text-align: center;
+        animation:blinkingText 0.4s infinite;
+    }
+    @keyframes blinkingText{
+        0%{     color: red;    }
+        40%{    color: ornage; }
+        60%{    color: pink; }
+        90%{    color:transparent;  }
+        100%{   color: green;    }
+    }
+
+#scores {
+    text-align: center;
+}
+
+
+
+

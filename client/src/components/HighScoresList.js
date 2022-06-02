@@ -10,6 +10,8 @@ const HighScoresList = ({monsters, deleteMonster}) => {
     return (
             <>
                 <div className="finish-page-text">
+                <h1 id="blink" > high scores </h1>
+                <hr></hr>
                 {theScoresList}
                 </div>
             </>
