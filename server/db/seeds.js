@@ -3,7 +3,7 @@ db.dropDatabase();
 
 db.monsters.insertMany([
     {
-        name:"FAB",
+        name:"FIN",
         finalScore: 342
     },
     {
