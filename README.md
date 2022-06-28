@@ -17,4 +17,4 @@ can be extended but there is peril as not all events will be so helpful.
 + Now, to install all the modules for the client run ```npm i```
 + Once the download is completed, run ```cd ../server```
 + Finally, to install the modules for the server run ```npm i```
-+ _Optional_: To get some pre-created users in the database run ```npm run seeds``` after the last command.
++ _Optional_: To get some pre-created players and scores in the database run ```npm run seeds``` after the last command.
