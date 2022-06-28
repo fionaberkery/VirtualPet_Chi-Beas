@@ -43,3 +43,21 @@ can be extended but there is peril as not all events will be so helpful.
     <a href="https://github.com/fionaberkery">Fiona Berkery</a>
 </div>
 
+<div style="margin-top: 5vh">
+    <a href="https://github.com/aaronhubber">
+        <img src="https://avatars.githubusercontent.com/u/98174364?v=4" style="border-radius:50%; vertical-align:middle; width:6vh; margin-right: 2vw"></a>
+    <a href="https://github.com/aaronhubber">Aaron Hubber</a>
+</div>
+
+<div style="margin-top: 5vh">
+    <a href="https://github.com/sandramolina">
+        <img src="https://avatars.githubusercontent.com/u/55206800?v=4" style="border-radius:50%; vertical-align:middle; width:6vh; margin-right: 2vw"></a>
+    <a href="https://github.com/sandramolina">Sandra Molina</a>
+</div>
+
+<div style="margin-top: 5vh">
+    <a href="https://github.com/andrewredman91">
+        <img src="https://avatars.githubusercontent.com/u/101582250?v=4" style="border-radius:50%; vertical-align:middle; width:6vh; margin-right: 2vw"></a>
+    <a href="https://github.com/andrewredman91">Andrew Redman</a>
+</div>
+
