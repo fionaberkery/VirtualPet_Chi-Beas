@@ -38,7 +38,7 @@ can be extended but there is peril as not all events will be so helpful.
 ### Developed by:
 
 <div style="margin-top: 5vh">
-    <a href="https://github.com/fionaberkery"><img src="[https://avatars.githubusercontent.com/u/101360549?v=4](https://user-images.githubusercontent.com/101260084/176209448-c20cc64c-4a9b-44f8-b2f0-a769229cc799.png)" style="border-radius:50%; vertical-align:middle; width:6vh; margin-right: 2vw"></a>
+    <a href="https://github.com/fionaberkery"><img src="https://user-images.githubusercontent.com/101260084/176209448-c20cc64c-4a9b-44f8-b2f0-a769229cc799.png)" style="border-radius:50%; vertical-align:middle; width:6vh; margin-right: 2vw"></a>
     <a href="https://github.com/fionaberkery">Fiona Berkery</a>
 </div>
 
