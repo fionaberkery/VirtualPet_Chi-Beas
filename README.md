@@ -1,7 +1,5 @@
 # VirtualPet Chi-Beas 👾
 
----
-
 Chi-Beas is a virtual pet game inspired by the original Tamagotchi. It's life and health is dependent on a
 timer and once the time is up the game is over. Through triggering random events the health of the pet 
 can be extended but there is peril as not all events will be so helpful.
