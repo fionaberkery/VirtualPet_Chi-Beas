@@ -4,12 +4,16 @@ Chi-Beas is a virtual pet game inspired by the original Tamagotchi. It's life an
 timer and once the time is up the game is over. Through triggering random events the health of the pet 
 can be extended but there is peril as not all events will be so helpful.
 
+<br></br>
+
 <section style="display: flex; flex-direction: row" align="center" gap="30px" >
 
 <img width="300" height = "200" alt="virtualPet" src="https://user-images.githubusercontent.com/101260084/176427864-6172dab2-6025-4add-ac04-d8868c7b0944.gif"/>
 <img width="300" height = "200" alt="virtualPet" src="https://user-images.githubusercontent.com/101260084/176428015-e3edf47f-053a-4cad-b3d2-ea6a83d88015.gif"/>
 <img width="300" height = "200" alt="virtualPet" src="https://user-images.githubusercontent.com/101260084/176428104-68a5bed4-16a5-4fc5-9ba0-76b5a8ab2cb2.gif"/>
     </section>
+    
+<br></br>
 
 ## Set Up 
 
